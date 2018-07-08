@@ -1,0 +1,22 @@
+.sm-info
+	&__title
+		margin-bottom: 25px
+		color: #242831
+		+sm 
+			text-decoration: underline
+		&:after
+			content: ''
+			display: block
+			margin-top: 5px
+			border-top: 2px solid #060416
+			width: 229px
+			+sm 
+				display: none
+	&__description
+		max-width: 400px
+		+f(10px, 500, 1.4)
+		letter-spacing: 0.005em
+		+md 
+			max-width: none
+		+sm 
+			+f(11px, 700, 1.636)

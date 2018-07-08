@@ -1,0 +1,224 @@
+.section
+	padding-top: 100px
+	// +cover
+	+gpu
+	+md 
+		padding-top: 70px
+		padding-bottom: 70px
+	// &.is-active
+	// 	.section__bg
+	// 		opacity: 1
+	&_bg
+		color: $white
+		.section__lines
+			opacity: 0.4
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		// opacity: 0
+		+cover
+		// transition: opacity 0.6s
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			opacity: 0.39
+			background: $black
+	&__scrollable
+		overflow: auto
+		height: 100%
+	&__container
+		height: 100%
+		+vertical 
+		&:before 
+			+sm 
+				display: none
+	&__inner
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		// padding-top: 100px
+		padding-bottom: 30px
+		text-align: left
+		+md 
+			padding-top: 50px
+			// padding-top: 120px
+		+sm 
+			display: block
+	&__content
+		padding: 0 25px
+		+md
+			padding: 0
+	&__title
+		margin-bottom: 82px
+		max-width: 450px
+		+md 
+			max-width: 600px
+		+sm 
+			margin-bottom: 65px
+			text-decoration: underline
+	&__footer
+		+clr
+		+sm 
+			display: flex
+			flex-direction: column
+	&__counter
+		float: left
+		padding-left: 10px
+		+sm 
+			float: none
+			order: 1
+			padding: 50px 0 0
+			text-align: center
+		&-main,
+		&-dots,
+		&-total
+			display: inline-block
+			vertical-align: bottom
+		&-main
+			font-family: $fontGotham
+			+f(48px, 700, 1.25)
+			letter-spacing: 0.005em
+		&-dots
+			padding: 0 5px 24px
+			font-size: 0
+			i
+				display: inline-block
+				vertical-align: top
+				border: 1px solid $white
+				width: 6px
+				height: 6px
+				background: #e9e9e9
+				&:not(:last-child)
+					margin-right: 5px
+		&-total
+			padding: 0 0 18px 5px
+			font-family: $fontGotham
+			+f(14px, 700, 1.25)
+	&__sm-box
+		padding-top: 17px
+		margin-left: 175px
+		max-width: 510px
+		color: currentColor
+		+sm 
+			padding: 0
+			margin: 0 auto
+		+xs
+			max-width: 225px
+	&__nav
+		padding: 2px 0 0
+		margin: -20px
+		text-align: right
+		+sm 
+			display: none
+	&__arr
+		padding: 20px
+		background: none
+		text-align: center
+		&-icon 
+			fill: $white
+			font-size: 20px
+	&__sm-info
+		float: right
+		padding-left: 45px
+		width: 66%
+		+md 
+			float: none
+			padding-left: 0
+			width: 100%
+		.sm-info__title
+			margin-right: -50%
+			+md 
+				margin-right: 0
+	&__box
+		float: left
+		padding: 35px 0 35px 45px
+		width: 34%
+		+md 
+			float: none
+			display: inline-block
+			vertical-align: top
+			padding: 30px 0
+			width: 33.33%
+		+xs 
+			width: 50%
+			text-align: center
+		&:not(:nth-child(2))
+			clear: right
+	&__label
+		position: absolute
+		left: 45px
+		bottom: 45px
+		max-height: 100px
+		color: #d1d1d1
+		+f(9px, 500, 11px)
+		letter-spacing: 0.005em
+		text-align: left
+		writing-mode: vertical-rl
+		transform: scale(-1)
+		+md 
+			display: none
+	&__subtitle
+		margin: 0 0 50px 45px
+		max-width: 460px
+		color: #242831
+		+md 
+			margin: 0 0 50px
+		+sm 
+			margin-bottom: 30px
+		&:after
+			content: ''
+			display: block
+			margin-top: 5px
+			border-top: 2px solid #060416
+			width: 229px
+			+sm 
+				display: none
+		span 
+			color: $red
+	&__description
+		margin-top: 30px
+		max-width: 420px
+		color: #17191c
+		+f(18px, 400, 1.667)
+		+sm 
+			display: none
+		p
+			opacity: 0.43
+	&__lines
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		pointer-events: none
+	&__line 
+		position: absolute
+		top: 0
+		bottom: 0
+		border-left: 1px solid gainsboro
+		border-right: 1px solid gainsboro
+		width: 20%
+		transform: scaleY(0)
+		transform-origin: center bottom
+		+sm 
+			border-left: none
+			width: 1px 
+		&:nth-child(1)
+			left: 0
+			+sm 
+				left: 50%
+		&:nth-child(2)
+			left: 40%
+			+sm
+				display: none
+		&:nth-child(3)
+			left: 80%
+			+sm
+				display: none

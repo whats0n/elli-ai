@@ -1,0 +1,54 @@
+.header
+	position: fixed
+	z-index: 500
+	top: 0
+	left: 0
+	right: 0
+	&[data-theme="white"]
+		.btn-nav
+			span 
+				background: $white
+		.logo 
+			color: $white
+	&__inner
+		padding-top: 41px
+		+md 
+			padding-top: 11px
+
+.btn-nav
+	position: absolute
+	top: 43px
+	left: 25px
+	padding: 20px
+	background: none
+	+md 
+		top: 10px
+		left: 10px
+	+hover
+		span:last-child
+			transform: scaleX(1)
+	span 
+		display: block
+		width: 17px
+		height: 3px
+		background: $blue
+		transition: transform 0.3s, background 0.3s
+		+md 
+			width: 24px
+			height: 4px
+		&:not(:last-child)
+			margin-bottom: 2px
+		&:last-child 
+			transform: scaleX(0.53)
+			transform-origin: left center
+
+.logo
+	float: left
+	margin-left: 45px
+	color: $blue
+	font-family: $fontMyriad
+	+f(30px, 700, 2)
+	letter-spacing: 0.05em
+	transition: color 0.3s
+	+md 
+		float: right

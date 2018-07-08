@@ -1,0 +1,57 @@
+//FONTS
+=fontpath($name, $name1, $file)
+	src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
+=fontdefault($style, $weight, $name)
+	font-family: $name
+	font-style: $style
+	font-weight: $weight
+
+$fontPrimary: 'Montserrat'
+$fontGotham: 'Gotham Pro'
+$fontMyriad: 'Myriad Pro'
+
+//Gotham Pro bold
+@font-face
+	+fontdefault(normal, 700, $fontGotham)
+	+fontpath($fontGotham + ' Bold', $fontGotham + '-Bold', GothamPro-Bold)
+
+//Myriad Pro bold
+@font-face
+	+fontdefault(normal, 700, $fontMyriad)
+	+fontpath($fontMyriad + ' Bold', $fontMyriad + '-Bold', MyriadPro-Bold)
+
+//Primary
+@font-face
+	+fontdefault(normal, 400, $fontPrimary)
+	+fontpath($fontPrimary + ' Regular', $fontPrimary + '-Regular', montserrat-regular)
+@font-face
+	+fontdefault(italic, 400, $fontPrimary)
+	+fontpath($fontPrimary + ' Regular Italic', $fontPrimary + '-Regular-Italic', montserrat-italic)
+		
+@font-face
+	+fontdefault(normal, 500, $fontPrimary)
+	+fontpath($fontPrimary + ' Medium', $fontPrimary + '-Medium', montserrat-medium)
+@font-face
+	+fontdefault(italic, 500, $fontPrimary)
+	+fontpath($fontPrimary + ' Medium Italic', $fontPrimary + '-Medium-Italic', montserrat-mediumitalic)
+		
+@font-face
+	+fontdefault(normal, 600, $fontPrimary)
+	+fontpath($fontPrimary + ' Semibold', $fontPrimary + '-Semibold', montserrat-semibold)
+@font-face
+	+fontdefault(italic, 600, $fontPrimary)
+	+fontpath($fontPrimary + ' Semibold Italic', $fontPrimary + '-Semibold-Italic', montserrat-semibolditalic)
+		
+@font-face
+	+fontdefault(normal, 700, $fontPrimary)
+	+fontpath($fontPrimary + ' Bold', $fontPrimary + '-Bold', montserrat-bold)
+@font-face
+	+fontdefault(italic, 700, $fontPrimary)
+	+fontpath($fontPrimary + ' Bold Italic', $fontPrimary + '-Bold-Italic', montserrat-bolditalic)
+		
+@font-face
+	+fontdefault(normal, 900, $fontPrimary)
+	+fontpath($fontPrimary + ' Black', $fontPrimary + '-Black', montserrat-black)
+@font-face
+	+fontdefault(italic, 900, $fontPrimary)
+	+fontpath($fontPrimary + ' Black Italic', $fontPrimary + '-Black-Italic', montserrat-blackitalic)

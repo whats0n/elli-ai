@@ -1,0 +1,133 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="fullscreen js-fullscreen">
+		<div class="section section_bg fullscreen__section js-fullscreen-section" data-theme="white">
+			<div class="section__bg js-section-bg" style="background-image: url(img/main.jpg);"></div>
+			<div class="section__lines">
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+			</div>
+			<div class="section__scrollable js-fullscreen-section-scrollable">
+				<div class="container section__container">
+					<div class="inner section__inner">
+						<div class="section__content">
+							<h1 class="title-xl section__title" data-animation-from="fade-bottom">Helping people in organizations do&nbsp;their job faster</h1>
+							<div class="section__footer">
+								<div class="section__counter" data-animation-from="fade">
+									<div class="section__counter-main">1</div>
+									<div class="section__counter-dots">
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+									<div class="section__counter-total">/7</div>
+									<div class="section__nav">
+										<button class="section__arr section__next">
+											{{mixins.icon('next', 'section__arr-icon')}}
+										</button>
+									</div>
+								</div>
+								<div class="sm-box section__sm-box">
+									<div class="sm-box__figure" data-animation-from="fade">
+										<img src="img/multi-channel-white.png" alt="icon" class="sm-box__icon">
+									</div>
+									<div class="sm-box__content">
+										<a href="#" class="sm-box__title" data-animation-from="fade-bottom">Multi Channel</a>
+										<div class="sm-box__description" data-animation-from="fade-bottom">
+											<p>Dialog with ELLI-AI through the preferred channel from standard chat apps (mobile or desktop) to voice assistants platforms like Google or Amazon.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section fullscreen__section js-fullscreen-section">
+			<div class="section__lines">
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+			</div>
+			<div class="section__scrollable js-fullscreen-section-scrollable">
+				<div class="container section__container">
+					<div class="inner section__inner">
+						<div class="sm-info section__sm-info">
+							<h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">Designed for Service Operations with&nbsp;Service Operations Departments</h2>
+							<div class="sm-info__description" data-animation-from="fade-bottom">
+								<p>We are a team of passionate people concerned with business problems and their human and digital solutions.</p>
+								<p>A world where digital products and services transform the configuration and experience of enterprise businesses.</p>
+								<p>Discover human augmentation potential in enterprise businesses and create digital products and services enabled by AI technologies.</p>
+							</div>
+						</div>
+						{% for item in [
+							{ icon: 'multi-channel', title: 'Multi <br>Channel' },
+							{ icon: 'acquire-tickets', title: 'Acquire <br>Tickets' },
+							{ icon: 'services-notifications', title: 'Unavailable <br>Services Notifications' }
+						] %}
+							<div class="box section__box">
+								<a href="#" class="box__inner">
+									<div class="box__figure" data-animation-from="fade-bottom">
+										<img src="img/{{item.icon}}.png" alt="icon" class="box__icon">
+									</div>
+									<div class="box__title" data-animation-from="fade-bottom">{{item.title | safe}}</div>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="section__label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+				</div>
+			</div>
+		</div>
+		<div class="section fullscreen__section js-fullscreen-section">
+			<div class="section__lines">
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+				<span class="section__line js-section-line"></span>
+			</div>
+			<div class="section__scrollable js-fullscreen-section-scrollable">
+				<div class="container section__container">
+					<div class="inner section__inner">
+						<h2 class="title-md section__subtitle" data-animation-from="fade-bottom">We spend roughly <span>30%</span> of our job time&nbsp;to&nbsp;:</h2>
+						<ul class="list">
+							{% for item in [
+								'switch context',
+								'submit',
+								'track',
+								'reply',
+								'escalate',
+								'clarify',
+								'wait for response'
+							] %}
+								<li class="list__item" data-animation-from="fade-bottom">{{item | safe}}</li>
+							{% endfor %}
+						</ul>
+						<div class="section__description" data-animation-from="fade-bottom">
+							<p>on requests for things we need or are&nbsp;preventing us from getting our job done.</p>
+						</div>
+					</div>
+					<div class="section__label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="features js-features" data-animation-from="fade">
+		<div class="container">
+			<div class="inner">
+				<div class="features__box">
+					<div class="features__icon"></div>
+					<div class="features__title">Features</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
