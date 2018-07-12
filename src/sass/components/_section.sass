@@ -1,13 +1,9 @@
 .section
 	padding-top: 100px
-	// +cover
 	+gpu
 	+md 
 		padding-top: 70px
 		padding-bottom: 70px
-	// &.is-active
-	// 	.section__bg
-	// 		opacity: 1
 	&_bg
 		color: $white
 		.section__lines
@@ -18,18 +14,29 @@
 		left: 0
 		right: 0
 		bottom: 0
-		// opacity: 0
-		+cover
-		// transition: opacity 0.6s
-		&:before
-			content: ''
+		&-in 
 			position: absolute
 			top: 0
 			left: 0
 			right: 0
 			bottom: 0
-			opacity: 0.39
-			background: $black
+			+cover
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				opacity: 0.39
+				background: $black
+		&-mobile
+			display: none
+			+sm 
+				display: block
+		&-desktop
+			+sm 
+				display: none
 	&__scrollable
 		overflow: auto
 		height: 100%

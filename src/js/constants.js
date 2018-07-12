@@ -14,10 +14,15 @@ export const DOC = $(document);
 export const BODY = $('body');
 export const HTMLBODY = $('html, body');
 
+export const widthMD = 1025;
+
 export const touchDetect = 'ontouchstart' in window;
+
+export const getMediaMaxWidth = width => window.matchMedia(`(max-width: ${width}px)`).matches;
 
 export const EVENTS = {
   FULLSCREEN_BEFORE_CHANGE: 'FULLSCREEN_BEFORE_CHANGE',
   FULLSCREEN_AFTER_CHANGE: 'FULLSCREEN_AFTER_CHANGE',
-  FULLSCREEN_INIT: 'FULLSCREEN_INIT'
+  FULLSCREEN_INIT: 'FULLSCREEN_INIT',
+  FULLSCREEN_DESTROY: 'FULLSCREEN_DESTROY'
 };

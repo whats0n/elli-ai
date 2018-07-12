@@ -1,4 +1,4 @@
-import { EVENTS, ACTIVE, WIN, DOC, touchDetect } from '../constants';
+import { EVENTS, ACTIVE, WIN, DOC, touchDetect, widthMD, getMediaMaxWidth } from '../constants';
 import connect from '../connect';
 
 const DURATION = 1500;
@@ -17,7 +17,11 @@ class FullScreen {
       enable: this.enable.bind(this)
     };
 
-    this.callEvent(EVENTS.FULLSCREEN_INIT, { currentSlide: this.cache.slides.filter(`.${ACTIVE}`) });
+    // this.callEvent(EVENTS.FULLSCREEN_INIT, { slides: this.cache.slides, currentSlide: this.cache.slides.filter(`.${ACTIVE}`) });
+
+    !getMediaMaxWidth(widthMD) && this.init();
+
+    this.reinitOnResize();
   }
 
   initCache() {
@@ -34,14 +38,13 @@ class FullScreen {
       scrollable: false,
       scrollUp: false,
       scrollDown: false,
-      clickable: true
+      clickable: false
     };
   }
 
   initDOM() {
     this.cache.container.addClass('fullscreen');
     this.cache.slides.addClass('fullscreen__slide');
-    this.cache.slides.eq(this.cache.currentIndex).addClass(ACTIVE);
     this.cache.container.append(`<ul class="fullscreen__nav js-color-block">${
       (() => {
         let items = '';
@@ -52,42 +55,19 @@ class FullScreen {
       })()
     }</ul>`);
     this.cache.btns = this.cache.container.find('.js-fullscreen-btn');
-    this.cache.btns.eq(this.cache.currentIndex).addClass(ACTIVE);
   }
 
   initEvents() {
     this.onScroll();
-    !touchDetect && this.onWheel();
-    touchDetect && this.onSwipe();
+    this.onWheel();
     this.onKeys();
     this.onClick();
   }
 
-  //events
-  onSwipe() {
-    let start = 0;
-    let end = 0;
-    let threshold = 50;
-
-    DOC.on('touchstart', e => {
-      start = e.originalEvent.touches[0].pageY;
-    });
-
-    DOC.on('touchend', e => {
-      end = e.originalEvent.changedTouches[0].clientY;
-
-      if (start - end > threshold) {
-        this.goDown();
-      } else if (end - start > threshold) {
-        this.goUp();
-      }
-    });
-
-  }
-
+  //Event listeners
   onWheel() {
     WIN.on('wheel', e => {
-      if (!this.trigger.scrollable) return;
+      if (!this.trigger.scrollable || getMediaMaxWidth(widthMD)) return;
 
       const deltaY = e.originalEvent.deltaY;
 
@@ -101,6 +81,7 @@ class FullScreen {
 
   onScroll() {
     this.cache.slides.each((i, slide) => {
+      if (getMediaMaxWidth(widthMD)) return;
       slide = $(slide);
       this.enableTriggers(i, slide);
       if (this.props.scrollableContainer) {
@@ -118,6 +99,8 @@ class FullScreen {
     };
 
     DOC.on('keyup', e => {
+      if (getMediaMaxWidth(widthMD)) return;
+      this.trigger.clickable = false;
       switch (e.keyCode) {
         case keys.up:
           this.goUp();
@@ -133,13 +116,49 @@ class FullScreen {
     this.cache.btns.each((i, btn) => {
       $(btn).on('click', e => {
         e.preventDefault();
-        if (!this.trigger.clickable) return;
+        if (!this.trigger.clickable || getMediaMaxWidth(widthMD)) return;
         this.trigger.clickable = false;
         this.cache.currentIndex = i;
         this.goNext(i);
       });
     });
   }
+
+  reinitOnResize() {
+    let enable = !getMediaMaxWidth(widthMD);
+    WIN.on('resize', () => {
+      const mediaWidth = getMediaMaxWidth(widthMD);
+      if (mediaWidth && enable) {
+        enable = false;
+        this.destroy();
+        console.log('destroy on resize');
+      } else if (!mediaWidth && !enable) {
+        enable = true;
+        this.init();
+        console.log('init on resize');
+      }
+    });
+  }
+
+  destroy() {
+    this.trigger.scrollable = false;
+    this.trigger.scrollUp = false;
+    this.trigger.scrollDown = false;
+    this.trigger.clickable = false;
+    this.cache.currentIndex = 0;
+    this.cache.slides.removeClass(ACTIVE);
+    this.callEvent(EVENTS.FULLSCREEN_DESTROY, { slides: this.cache.slides });
+  }
+
+  init() {
+    const currentSlide = this.cache.slides.eq(0);
+    currentSlide.addClass(ACTIVE);
+    this.cache.btns.eq(0).addClass(ACTIVE);
+    this.callEvent(EVENTS.FULLSCREEN_INIT, { slides: this.cache.slides, currentSlide });
+    this.enableTriggers(0, currentSlide);
+  }
+
+  //!Event listeners
 
   //helpers
   checkTiggers() {
@@ -154,15 +173,6 @@ class FullScreen {
       this.trigger.scrollable = false;
       this.trigger.scrollUp = i > 0 && slide.scrollTop() <= 0;
       this.trigger.scrollDown = i < this.cache.length && slide.scrollTop() + slide.outerHeight() >= slide.get(0).scrollHeight;
-
-      // if (touchDetect) {
-      //   this.timer = setTimeout(() => {
-      //     this.trigger.scrollable = true;
-      //     this.trigger.scrollUp = true;
-      //     this.trigger.scrollDown = true;
-      //   }, dur || DURATION);
-      //   return;
-      // }
 
       this.timer && clearTimeout(this.timer);
       this.timer = setTimeout(() => {
@@ -199,9 +209,7 @@ class FullScreen {
   }
 
   callEvent(eventName, props) {
-    connect.call(eventName, Object.assign({
-      currentSlide: props.currentSlide
-    }, this.api));
+    connect.call(eventName, Object.assign(props, this.api));
   }
 
   //API
