@@ -104,10 +104,10 @@ connect.on(EVENTS.FULLSCREEN_AFTER_CHANGE, (props) => {
 const sections = $('.js-fullscreen-section');
 
 const showOnScroll = () => {
-  const winTop = WIN.scrollTop();
-  const winBottom = winTop + WIN.outerHeight()/2;
+  const scrollTop = WIN.scrollTop();
+  const scrollBottom = scrollTop + WIN.outerHeight()/2;
 
-  watch.forEach(fn => fn(winBottom));
+  watch.forEach(fn => fn(scrollTop, scrollBottom));
 };
 
 const watch = [];
@@ -125,8 +125,9 @@ sections.each((i, section) => {
       TweenMax.set(section, { clearProps: 'all' });
     });
 
-  watch.push((scrollPoint) => {
+  watch.push((scrollTop, scrollPoint) => {
     const offsetTop = section.offset().top;
+    const offsetBottom = section.offset().top + section.outerHeight();
 
     if (offsetTop <= scrollPoint && !section.hasClass(ACTIVE)) {
       section.addClass(ACTIVE);
@@ -135,6 +136,13 @@ sections.each((i, section) => {
       section.removeClass(ACTIVE);
       show.reverse();
     }
+
+    if (offsetTop <= scrollTop && offsetBottom > scrollTop) {
+      const colorBlocks = $('.js-color-block');
+      const theme = section.data('theme');
+      theme ? colorBlocks.attr('data-theme', theme) : colorBlocks.removeAttr('data-theme');
+    }
+
   });
 });
 

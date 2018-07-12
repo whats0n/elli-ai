@@ -152,8 +152,12 @@ class FullScreen {
 
   init() {
     const currentSlide = this.cache.slides.eq(0);
+    this.cache.slides.removeClass(ACTIVE);
     currentSlide.addClass(ACTIVE);
-    this.cache.btns.eq(0).addClass(ACTIVE);
+    this.cache.btns
+      .removeClass(ACTIVE)
+      .eq(0)
+      .addClass(ACTIVE);
     this.callEvent(EVENTS.FULLSCREEN_INIT, { slides: this.cache.slides, currentSlide });
     this.enableTriggers(0, currentSlide);
   }
