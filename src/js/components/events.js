@@ -30,7 +30,7 @@ const animateSection = props => {
       opacity: 1,
       y: 0,
       ease: Power2.easeOut
-    }, 0.15, '-=0.3')
+    }, 0.15, '-=0.8')
     .eventCallback('onComplete', () => {
       currentSlide.removeClass(USELESS);
       animationComplete && animationComplete();
@@ -77,7 +77,7 @@ connect.on(EVENTS.FULLSCREEN_INIT, (props) => {
   showSection({
     currentSlide: props.currentSlide,
     afterShow: showHeader,
-    animationComplete: props.enable
+    // animationComplete: props.enable
   });
 });
 
