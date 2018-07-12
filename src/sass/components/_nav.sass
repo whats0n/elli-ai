@@ -1,0 +1,33 @@
+.nav
+	position: fixed
+	z-index: 1000
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: auto
+	display: none
+	opacity: 0
+	background: rgba($black, 0.79)
+	&.is-open
+		display: block
+	&.is-useless
+		pointer-events: none
+	&__container
+		padding: 190px 50px
+		max-width: 576px
+		min-height: 100%
+		background: #2754d0
+		+md 
+			padding: 120px 30px
+	&__item
+		padding: 15px 0
+	&__link
+		display: block
+		padding: 10px 0
+		color: $white
+		+f(30px, 900, 1)
+		text-decoration: underline
+	.btn-nav
+		span 
+			background: $white

@@ -30,7 +30,7 @@ const animateSection = props => {
       opacity: 1,
       y: 0,
       ease: Power2.easeOut
-    }, 0.15)
+    }, 0.15, '-=0.3')
     .eventCallback('onComplete', () => {
       currentSlide.removeClass(USELESS);
       animationComplete && animationComplete();
@@ -45,12 +45,12 @@ const showSection = props => {
 };
 
 const showHeader = () => {
-  const navBtn = $('.js-nav-btn');
+  const navOpen = $('.js-nav-open');
   const logo = $('.js-logo');
   const features = $('.js-features');
 
   return new TimelineMax()
-    .staggerTo([navBtn, logo], 0.6, {
+    .staggerTo([navOpen, logo], 0.6, {
       opacity: 1,
       y: 0,
       ease: Power2.easeOut
@@ -87,10 +87,13 @@ connect.on(EVENTS.FULLSCREEN_DESTROY, (props) => {
   clearSections(props.slides);
 });
 
-connect.on(EVENTS.FULLSCREEN_BEFORE_CHANGE, (props) => props.currentSlide.fadeOut(700, () => {
-  clearAnimation();
-  clearSection(props.currentSlide);
-}));
+connect.on(EVENTS.FULLSCREEN_BEFORE_CHANGE, (props) => {
+  props.disable();
+  props.currentSlide.fadeOut(700, () => {
+    clearAnimation();
+    clearSection(props.currentSlide);
+  });
+});
 
 connect.on(EVENTS.FULLSCREEN_AFTER_CHANGE, (props) => {
   const {disable, enable, currentSlide} = props;
@@ -105,7 +108,7 @@ const sections = $('.js-fullscreen-section');
 
 const showOnScroll = () => {
   const scrollTop = WIN.scrollTop();
-  const scrollBottom = scrollTop + WIN.outerHeight()/2;
+  const scrollBottom = scrollTop + WIN.outerHeight();
 
   watch.forEach(fn => fn(scrollTop, scrollBottom));
 };
@@ -146,9 +149,16 @@ sections.each((i, section) => {
   });
 });
 
+const header = $('.js-header');
+
 WIN.on('scroll load resize', () => {
   if (getMediaMaxWidth(widthMD)) {
     showHeader();
     showOnScroll();
+  }
+  if (getMediaMaxWidth(widthMD)) {
+    header.addClass(ACTIVE);
+  } else {
+    header.removeClass(ACTIVE);
   }
 });

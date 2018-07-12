@@ -11,19 +11,47 @@
   <body>
     <!-- BEGIN content -->
     <!-- begin header -->
-    <header class="header js-color-block">
+    <header class="header js-header js-color-block">
+      <button class="btn-nav js-nav-open" data-animation-from="fade-top">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="container">
         <div class="inner header__inner">
-          <button class="btn-nav js-nav-btn" data-animation-from="fade-top">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
           <a href="#" class="logo js-logo" data-animation-from="fade-top">ELLI-AI</a>
         </div>
       </div>
     </header>
     <!-- end header -->
+    <!-- begin nav -->
+    <div class="nav js-nav">
+      <div class="nav__container js-nav-container">
+        <button class="btn-nav js-nav-close">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-animation-from="fade-bottom">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-animation-from="fade-bottom">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-animation-from="fade-bottom">Blog</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-animation-from="fade-bottom">News</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-animation-from="fade-bottom">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end nav -->
     <div class="fullscreen js-fullscreen">
       <div class="section section_bg fullscreen__section js-fullscreen-section" data-theme="white">
         <div class="section__bg js-section-bg">

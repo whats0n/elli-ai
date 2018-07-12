@@ -4,12 +4,24 @@
 	top: 0
 	left: 0
 	right: 0
+	transition: background 0.3s, box-shadow 0.3s
 	&[data-theme="white"]
 		.btn-nav
 			span 
 				background: $white
 		.logo 
 			color: $white
+	&.is-active
+		+md 
+			background: $white
+			box-shadow: 0 2px 3px 0 rgba($black, 0.1)
+		.btn-nav
+			span 
+				+md 
+					background: $blue
+		.logo 
+			+md 
+				color: $blue
 	&__inner
 		padding-top: 41px
 		+md 
@@ -17,6 +29,7 @@
 
 .btn-nav
 	position: absolute
+	z-index: 200
 	top: 43px
 	left: 25px
 	padding: 20px
