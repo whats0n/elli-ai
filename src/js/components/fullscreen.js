@@ -174,6 +174,7 @@ class FullScreen {
   enableTriggers(i, slide, dur) {
     if (slide.hasClass(ACTIVE)) {
       if (this.props.scrollableContainer) slide = slide.find(this.props.scrollableContainer);
+      this.trigger.clickable = false;
       this.trigger.scrollable = false;
       this.trigger.scrollUp = i > 0 && slide.scrollTop() <= 0;
       this.trigger.scrollDown = i < this.cache.length && slide.scrollTop() + slide.outerHeight() >= slide.get(0).scrollHeight;
