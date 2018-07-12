@@ -11,10 +11,12 @@ class FullScreen {
     this.initCache();
     this.initDOM();
     this.initEvents();
+    this.disable = this.disable.bind(this);
+    this.enable = this.enable.bind(this);
 
     this.api = {
-      disable: this.disable.bind(this),
-      enable: this.enable.bind(this)
+      disable: this.disable,
+      enable: this.enable
     };
 
     // this.callEvent(EVENTS.FULLSCREEN_INIT, { slides: this.cache.slides, currentSlide: this.cache.slides.filter(`.${ACTIVE}`) });
@@ -22,6 +24,14 @@ class FullScreen {
     !getMediaMaxWidth(widthMD) && this.init();
 
     this.reinitOnResize();
+
+    connect.on(EVENTS.NAV_OPEN, () => {
+      this.trigger.scrollable = false;
+      this.trigger.scrollUp = false;
+      this.trigger.scrollDown = false;
+      this.trigger.clickable = false;
+    });
+    connect.on(EVENTS.NAV_CLOSE, this.enable);
   }
 
   initCache() {

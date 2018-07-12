@@ -1,8 +1,11 @@
-import {OPEN} from '../constants';
+import {OPEN, EVENTS} from '../constants';
+import connect from '../connect';
+
 const USELESS = 'is-useless';
 const nav = $('.js-nav');
 const navElements = nav.find('[data-animation-from]');
-const show = new TimelineMax({paused: true})
+
+const animation = new TimelineMax({paused: true})
   .to(nav, 0.6, {
     opacity: 1
   })
@@ -10,28 +13,41 @@ const show = new TimelineMax({paused: true})
     opacity: 1,
     y: 0
   }, 0.15)
-  .eventCallback('onComplete', () => nav.removeClass(USELESS))
+  .eventCallback('onComplete', () => {
+    nav.removeClass(USELESS);
+    connect.call(EVENTS.NAV_OPEN);
+  })
   .eventCallback('onReverseComplete', () => {
     nav.removeClass(USELESS);
     nav.removeClass(OPEN);
+    connect.call(EVENTS.NAV_CLOSE);
   });
 
+const close = () => {
+  nav.addClass(USELESS);
+  animation.reverse();
+};
 
-$('.js-nav-open').on('click', e => {
+const open = () => {
   nav.addClass(OPEN);
   nav.addClass(USELESS);
-  show.play();
+  connect.call(EVENTS.NAV_OPEN);
+  animation.play();
+};
+
+$('.js-nav-open').on('click', e => {
+  e.preventDefault();
+  open();
 });
 
 
 $('.js-nav-close').on('click', e => {
-  nav.addClass(USELESS);
-  show.reverse();
+  e.preventDefault();
+  close();
 });
 
 $('.js-nav').on('click', e => {
   if ($(e.target).closest('.js-nav-container').length) return;
-  nav.addClass(USELESS);
-  show.reverse();
+  close();
 });
 
