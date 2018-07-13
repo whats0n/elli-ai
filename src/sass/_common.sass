@@ -50,12 +50,22 @@ body
 		z-index: 300
 		top: 50%
 		left: 45px
+		color: $blue
+		transform: translate3d(0,-50%,0)
+		transition: opacity 0.6s, color 0.4s
 		+md 
 			display: none
+		&.is-active
+			opacity: 1
 		&[data-theme="white"]
+			color: $white
 			.fullscreen__nav-btn
 				&:before
 					background: $white
+			.fullscreen__counter-dots
+				i
+					border-color: $white
+					background: #e9e9e9
 		&-btn 
 			padding: 11px 0
 			background: none
@@ -71,3 +81,50 @@ body
 				transform: scaleX(0.5)
 				transform-origin: left center
 				transition: transform 0.3s, background 0.3s
+
+	&__counter
+		position: absolute
+		top: 100%
+		left: 0
+		padding: 20px 0 0
+		white-space: nowrap
+		&-main,
+		&-dots,
+		&-total
+			display: inline-block
+			vertical-align: bottom
+		&-main
+			font-family: $fontGotham
+			+f(48px, 700, 1.25)
+			letter-spacing: 0.005em
+		&-dots
+			padding: 0 5px 24px
+			font-size: 0
+			i
+				display: inline-block
+				vertical-align: top
+				border: 1px solid $blue
+				width: 6px
+				height: 6px
+				background: rgba($blue, 0.8)
+				transition: border-color 0.4s, background 0.4s
+				&:not(:last-child)
+					margin-right: 5px
+		&-total
+			padding: 0 0 18px 5px
+			font-family: $fontGotham
+			+f(14px, 700, 1.25)
+	&__arrows
+		padding: 2px 0 0
+		margin: -20px
+		text-align: right
+		+sm 
+			display: none
+	&__arr
+		padding: 20px
+		color: inherit
+		background: none
+		text-align: center
+		&-icon 
+			fill: currentColor
+			font-size: 20px

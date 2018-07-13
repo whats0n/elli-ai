@@ -1,0 +1,57 @@
+---
+title: Our team
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="page js-page">
+		<div class="container page__container">
+			<div class="inner page__inner">
+				<div class="page__lines">
+					<span class="page__line js-page-line"></span>
+					<span class="page__line js-page-line"></span>
+					<span class="page__line js-page-line"></span>
+				</div>
+				<div class="about">
+					<div class="team about__team">
+						<h2 class="title-xl title-xl_black team__title">Our team</h2>
+						<div class="team__items">
+							{% for item in [
+								{
+									img: 'img/daniel.jpg',
+									title: 'Daniel Pavelescu',
+									subtitle: 'Business Accelerator Manager'
+								},
+								{
+									img: 'img/razvan.jpg',
+									title: 'Razvan Gai',
+									subtitle: 'Product Manager'
+								},
+								{
+									img: 'img/jens-peter.jpg',
+									title: 'Jens-Peter Labus',
+									subtitle: 'bAhead /// GermanRetailLab'
+								},
+								{
+									img: 'img/gabriel.jpg',
+									title: 'Gabriel Prefac',
+									subtitle: 'Innovation Officer'
+								}
+							] %}
+								<div class="team__item">
+									<div class="team__img" style="background-image: url({{item.img}});"></div>
+									<div class="item__title">{{item.title}}</div>
+									<div class="item__subtitle">{{item.subtitle}}</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="about__info"></div>
+				</div>
+			</div>
+			<div class="page__label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+		</div>
+	</div>
+
+{% endblock %}

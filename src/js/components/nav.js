@@ -1,3 +1,4 @@
+import { TimelineMax, TweenMax } from 'gsap';
 import {OPEN, EVENTS} from '../constants';
 import connect from '../connect';
 
@@ -51,3 +52,4 @@ $('.js-nav').on('click', e => {
   close();
 });
 
+export default { close, open };

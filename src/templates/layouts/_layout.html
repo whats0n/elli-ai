@@ -13,10 +13,14 @@
   </head>
   <body>
 
+      {% include 'partials/_header.html' %}
+      {% include 'partials/_nav.html' %}
     <!-- BEGIN content -->
-    {% include 'partials/_header.html' %}
-    {% include 'partials/_nav.html' %}
-    {% block content %}{% endblock %}
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
     <!-- END content -->
 
     <!-- BEGIN scripts -->

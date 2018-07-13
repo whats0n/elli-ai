@@ -23,9 +23,10 @@
 			+md 
 				color: $blue
 	&__inner
-		padding-top: 41px
+		padding-top: 34px
 		+md 
-			padding-top: 11px
+			padding-top: 15px
+			padding-bottom: 15px
 
 .btn-nav
 	position: absolute
@@ -60,8 +61,12 @@
 	margin-left: 45px
 	color: $blue
 	font-family: $fontMyriad
-	+f(30px, 700, 2)
-	letter-spacing: 0.05em
+	font-size: 0
 	transition: color 0.3s
 	+md 
 		float: right
+	&__icon
+		fill: currentColor
+		font-size: 56px
+		+md 
+			font-size: 40px

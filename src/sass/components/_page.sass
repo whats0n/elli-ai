@@ -1,0 +1,33 @@
+.page
+	padding: 160px 0 0
+	&__lines
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		pointer-events: none
+	&__line 
+		position: absolute
+		top: 0
+		bottom: 0
+		border-left: 1px solid gainsboro
+		border-right: 1px solid gainsboro
+		width: 20%
+		transform: scaleY(0)
+		transform-origin: center bottom
+		+sm 
+			border-left: none
+			width: 1px 
+		&:nth-child(1)
+			left: 0
+			+sm 
+				left: 50%
+		&:nth-child(2)
+			left: 40%
+			+sm
+				display: none
+		&:nth-child(3)
+			left: 80%
+			+sm
+				display: none
