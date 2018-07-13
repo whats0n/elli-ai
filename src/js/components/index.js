@@ -27,26 +27,20 @@ const FadeTransition = Barba.BaseTransition.extend({
   },
 
   fadeOut: function() {
-    console.log('fade out', $(this.oldContainer).find('.js-fullscreen').length);
     nav.close();
     $('.js-color-block').removeAttr('data-theme');
     return $(this.oldContainer).animate({ opacity: 0 }).promise();
   },
 
   fadeIn: function() {
-    const _this = this;
-    const newContainer = $(this.newContainer);
-    const oldContainer = $(this.oldContainer);
-
-    oldContainer.hide();
-
-    newContainer
+    $(this.oldContainer).hide();
+    $(this.newContainer)
       .css({
         visibility : 'visible',
         opacity : 0
       })
-      .animate({ opacity: 1 }, 400, function() {
-        _this.done();
+      .animate({ opacity: 1 }, 400, () => {
+        this.done();
         FullScreen.init();
         onScroll.init();
         page.show();
