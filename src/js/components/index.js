@@ -6,6 +6,7 @@ import FullScreen from './fullscreen';
 
 import nav from './nav';
 import onScroll from './onscroll';
+import page from './page';
 
 import { showHeader } from './sections';
 
@@ -16,6 +17,7 @@ FullScreen.init();
 onScroll.init();
 
 showHeader();
+page.show();
 
 const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
@@ -47,6 +49,7 @@ const FadeTransition = Barba.BaseTransition.extend({
         _this.done();
         FullScreen.init();
         onScroll.init();
+        page.show();
       });
   }
 });

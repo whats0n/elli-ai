@@ -1,5 +1,17 @@
 .page
-	padding: 160px 0 0
+	padding-top: 120px
+	height: 100vh
+	+md 
+		padding-top: 0
+	&__scrollable
+		overflow: auto
+		padding-top: 40px
+		padding-bottom: 40px
+		height: 100%
+		+md 
+			padding-top: 0
+			padding-bottom: 0
+			height: auto
 	&__lines
 		position: fixed
 		top: 0
@@ -31,3 +43,16 @@
 			left: 80%
 			+sm
 				display: none
+	&__label
+		position: absolute
+		left: 45px
+		bottom: 45px
+		max-height: 100px
+		color: #d1d1d1
+		+f(9px, 500, 11px)
+		letter-spacing: 0.005em
+		text-align: left
+		writing-mode: vertical-rl
+		transform: scale(-1)
+		+md 
+			display: none

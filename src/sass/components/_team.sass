@@ -1,0 +1,38 @@
+.team
+	&__underline
+		display: block
+		border: none
+		margin: 0
+		border-bottom: 2px solid #060416
+		max-width: 285px
+	&__items
+		padding-top: 40px
+		margin: -20px
+		font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 20px
+		width: 50%
+		max-width: 275px
+		+lg 
+			max-width: none
+		+xs 
+			width: 100%
+	&__img
+		margin-bottom: 15px
+		max-width: 193px
+		+xs 
+			max-width: 73%
+		&-in
+			padding-bottom: 100%
+			+cover
+	&__subtitle
+		color: $blue
+		+f(13px, 700, 15px)
+	&__category
+		color: $black
+		+f(12px, 700, 15px)
+	&__description
+		padding-top: 20px
+		+f(12px, 400, 15px)
