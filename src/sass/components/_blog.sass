@@ -1,0 +1,45 @@
+.blog
+	padding-left: 45px
+	+md 
+		padding: 40px 0
+	&__heading 
+		margin-bottom: 20px
+	&__title
+		line-height: 1
+		+xs
+			margin-bottom: 5px
+	&__article
+		padding: 10px 0
+		p 
+			color: $dark
+			+f(12px, 500, 1.5)
+	&__date
+		margin-bottom: 10px
+		color: $blue
+		+f(14px, 700, 20px)
+	&__img 
+		display: block
+		margin-bottom: 15px
+		width: 100%
+	&__main
+		margin: 0 -20px
+		+clr 
+		+sm 
+			margin: 0
+	&__content,
+	&__aside
+		float: left
+		padding: 10px 20px
+		+lg 
+			width: 100%
+		+sm 
+			padding: 10px 0
+			width: 100%
+	&__content
+		width: 67%
+		+md 
+			width: 60%
+	&__aside
+		width: 33%
+		+md 
+			width: 40%

@@ -1,0 +1,45 @@
+---
+title: News
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="page js-page" data-animation="news">
+		<div class="page__scrollable">
+			<div class="page__lines">
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+			</div>
+			<div class="container page__container">
+				<div class="inner page__inner">
+					<div class="news">
+						<div class="news__items">
+							<div class="news__item">
+								<div class="news__box">
+									<div class="news__heading">
+										<h2 class="title-xl title-xl_black news__title js-page-title" data-animation-from="fade-top">News</h2>
+										<hr data-animation-from="scale-x" class="news__underline js-page-underline">
+									</div>
+									<div class="news__subtitle js-page-description" data-animation-from="fade-bottom">Our fresh news specially for you</div>
+								</div>
+							</div>
+							{% for item in range(0,5) %}
+								<div class="news__item js-news-item">
+									<div class="news__img js-news-img" style="background-image: url(https://placecage.com/300/200);" data-animation-from="fade"></div>
+									<div class="news__date js-news-date" data-animation-from="fade-bottom">10th of March 2018</div>
+									<div class="news__description js-news-description" data-animation-from="fade-bottom">
+										<p>Helping parents discover the right apps for their kids</p>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

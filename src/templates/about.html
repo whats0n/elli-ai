@@ -1,5 +1,5 @@
 ---
-title: Our team
+title: About
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -15,12 +15,12 @@ title: Our team
 			<div class="container page__container">
 				<div class="inner page__inner">
 					<div class="about">
-						<div class="team about__team js-team">
-							<div class="team__heading js-team-heading">
-								<h2 class="title-xl title-xl_black team__title js-team-title" data-animation-from="fade">Our team</h2>
-								<hr data-animation-from="scale-x" class="team__underline js-team-underline">
+						<div class="team about__team">
+							<div class="team__heading">
+								<h2 class="title-xl title-xl_black team__title js-page-title" data-animation-from="fade-top">Our team</h2>
+								<hr data-animation-from="scale-x" class="team__underline js-page-underline">
 							</div>
-							<div class="team__items js-team-items">
+							<div class="team__items">
 								{% for item in [
 									{
 										img: 'img/daniel.jpg',
@@ -48,19 +48,19 @@ title: Our team
 									}
 								] %}
 									<div class="team__item">
-										<div class="team__img" data-animation-from="fade-top">
+										<div class="team__img js-page-item" data-animation-from="fade-top">
 											<div class="team__img-in" style="background-image: url({{item.img}});"></div>
 										</div>
-										<div class="team__subtitle" data-animation-from="fade-bottom">{{item.title}}</div>
-										<div class="team__category" data-animation-from="fade-bottom">{{item.subtitle}}</div>
-										<div class="team__description" data-animation-from="fade-bottom">
+										<div class="team__subtitle js-page-item" data-animation-from="fade-bottom">{{item.title}}</div>
+										<div class="team__category js-page-item" data-animation-from="fade-bottom">{{item.subtitle}}</div>
+										<div class="team__description js-page-item" data-animation-from="fade-bottom">
 											<p>{{item.description}}</p>
 										</div>
 									</div>
 								{% endfor %}
 							</div>
 						</div>
-						<div class="about__info js-about">
+						<div class="about__info">
 							<div class="about__info-in">
 								{% for item in [
 									{
@@ -77,8 +77,8 @@ title: Our team
 									}
 								] %}
 									<div class="about__item js-about-item">
-										<div class="about__heading js-about-heading">
-											<h2 class="title-xl title-xl_black about__title js-about-title" data-animation-from="fade">{{item.title}}</h2>
+										<div class="about__heading">
+											<h2 class="title-xl title-xl_black about__title js-about-title" data-animation-from="fade-top">{{item.title}}</h2>
 											<hr data-animation-from="scale-x" class="about__underline js-about-underline">
 										</div>
 										<div class="about__description js-about-description" data-animation-from="fade-bottom">
@@ -90,7 +90,7 @@ title: Our team
 						</div>
 					</div>
 				</div>
-				<div class="page__label js-page-item" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
 			</div>
 		</div>
 	</div>

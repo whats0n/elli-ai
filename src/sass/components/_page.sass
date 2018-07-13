@@ -1,6 +1,8 @@
 .page
 	padding-top: 120px
 	height: 100vh
+	&.is-useless
+		pointer-events: none
 	+md 
 		padding-top: 0
 	&__scrollable
@@ -12,6 +14,8 @@
 			padding-top: 0
 			padding-bottom: 0
 			height: auto
+	&__container
+		min-height: 100%
 	&__lines
 		position: fixed
 		top: 0
@@ -44,7 +48,7 @@
 			+sm
 				display: none
 	&__label
-		position: absolute
+		position: fixed
 		left: 45px
 		bottom: 45px
 		max-height: 100px

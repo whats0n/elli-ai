@@ -42,8 +42,6 @@ class FullScreen {
 
     connect.on(EVENTS.NAV_OPEN, () => this.toggle(false));
     connect.on(EVENTS.NAV_CLOSE, () => this.toggle(true));
-
-    console.log('full');
   }
 
   initCache() {
@@ -191,6 +189,7 @@ class FullScreen {
     this.trigger.clickable = false;
     this.cache.currentIndex = 0;
     this.cache.slides.removeClass(ACTIVE);
+    this.removeEvents();
     this.callEvent(EVENTS.FULLSCREEN_DESTROY, { slides: this.cache.slides });
   }
 

@@ -1,0 +1,62 @@
+.news
+	padding: 0 45px
+	margin-right: -27%
+	+md 
+		padding: 0
+		margin-right: 0
+	+sm 
+		padding-bottom: 20px
+	+xs 
+		padding-top: 15px
+		padding-bottom: 30px
+	&__items
+		margin: 0 -35px
+		font-size: 0
+		+md 
+			margin: 0 -25px
+		+xs 
+			margin: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 25px 35px
+		width: 33.33%
+		+md 
+			padding: 25px
+		+sm 
+			width: 50%
+		+xs 
+			padding: 8px 0
+			width: 100%
+	&__heading
+		margin-bottom: 20px
+		+xs 
+			margin-bottom: 10px
+	&__title
+		+md 
+			margin-bottom: 10px
+	&__underline
+		display: block
+		border: none
+		margin: 0
+		border-bottom: 2px solid #060416
+		max-width: 152px
+	&__subtitle
+		max-width: 185px
+		+f(14px, 700, 18px)
+	&__img 
+		padding-bottom: 56.25%
+		margin-bottom: 10px
+		+cover
+	&__box
+		padding: 30px 0 30px 30px
+		+xs 
+			padding: 17px 0 8px
+	&__date
+		margin-bottom: 3px
+		color: $blue 
+		+f(13px, 700, 24px)
+	&__description
+		max-width: 240px
+		color: $black
+		+f(12px, 700, 18px)

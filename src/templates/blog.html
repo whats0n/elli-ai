@@ -1,0 +1,75 @@
+---
+title: Blog
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="page js-page" data-animation="blog">
+		<div class="page__scrollable">
+			<div class="page__lines">
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+			</div>
+			<div class="container page__container">
+				<div class="inner page__inner">
+					<div class="blog">
+						<div class="blog__heading">
+							<h2 class="title-xl title-xl_black title-xl_xs-sm blog__title js-page-title" data-animation-from="fade-bottom">HYPED on CONVERSATIONAL USER INTERFACE</h2>
+							<h3 class="title-sm blog__subtitle js-page-description" data-animation-from="fade-bottom">powered by ELLI-AI</h3>
+						</div>
+						<div class="blog__main">
+							<div class="blog__content js-page-content">
+								{% for item in [
+									{
+										title: ' Header 1',
+										date: '11th of March 2018',
+										img: 'https://placecage.com/532/121',
+										description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
+									},
+									{
+										title: ' Header 2',
+										date: '9th of March 2018',
+										img: 'https://placecage.com/532/121',
+										description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
+									}
+								] %}
+									<article class="blog__article">
+										<h3 class="title-sm blog__subtitle" data-animation-from="fade-bottom">{{item.title}}</h3>
+										<div class="blog__date" data-animation-from="fade-bottom">{{item.date}}</div>
+										<img src="{{item.img}}" alt="{{item.title}}" class="blog__img" data-animation-from="fade">
+										<div class="blog__description" data-animation-from="fade-bottom">
+											<p>{{item.description}}</p>
+										</div>
+									</article>
+								{% endfor %}
+							</div>
+							<div class="blog__aside js-page-aside">
+								{% for item in [
+									{
+										title: ' Header 3',
+										date: '11th of March 2018',
+										img: 'https://placecage.com/242/281',
+										description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur'
+									}
+								] %}
+									<article class="blog__article">
+										<h3 class="title-sm blog__subtitle" data-animation-from="fade-bottom">{{item.title}}</h3>
+										<div class="blog__date" data-animation-from="fade-bottom">{{item.date}}</div>
+										<img src="{{item.img}}" alt="{{item.title}}" class="blog__img" data-animation-from="fade">
+										<div class="blog__description" data-animation-from="fade-bottom">
+											<p>{{item.description}}</p>
+										</div>
+									</article>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

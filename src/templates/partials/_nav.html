@@ -10,8 +10,8 @@
 			{% for item in [
 				{ title: 'Home', href: 'page.html' },
 				{ title: 'About', href: "about.html" },
-				{ title: 'Blog' },
-				{ title: 'News' },
+				{ title: 'Blog', href: 'blog.html' },
+				{ title: 'News', href: 'news.html' },
 				{ title: 'Contact' }
 			] %}
 				<li class="nav__item"><a href="{{item.href or '#'}}" class="nav__link" data-animation-from="fade-bottom">{{item.title}}</a></li>

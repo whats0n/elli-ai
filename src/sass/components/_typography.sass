@@ -1,17 +1,26 @@
 .title-xl
 	font-family: $fontGotham
 	+f(48px, 700, 1.25)
-	letter-spacing: 0.005em
+	letter-spacing: 0.001em
 	+md 
 		+f(36px, 900, 1.111)
 	&_black
 		font-family: $fontPrimary
 		font-weight: 900
+	&_xs-sm
+		+xs
+			font-size: 26px
 
 .title-lg
 	+f(38px, 900, 1.11)
-	letter-spacing: 0.005em
+	letter-spacing: 0.001em
 
 .title-md
 	+f(36px, 900, 1.11)
-	letter-spacing: 0.005em
+	letter-spacing: 0.001em
+
+.title-sm
+	+f(24px, 900, 1.25)
+	letter-spacing: 0.001em
+	+xs 
+		font-size: 20px

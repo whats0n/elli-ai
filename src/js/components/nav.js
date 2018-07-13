@@ -7,13 +7,13 @@ const nav = $('.js-nav');
 const navElements = nav.find('[data-animation-from]');
 
 const animation = new TimelineMax({paused: true})
-  .to(nav, 0.6, {
+  .to(nav, 0.4, {
     opacity: 1
   })
   .staggerTo(navElements, 0.6, {
     opacity: 1,
     y: 0
-  }, 0.15)
+  }, 0.15, '-=0.3')
   .eventCallback('onComplete', () => {
     nav.removeClass(USELESS);
     connect.call(EVENTS.NAV_OPEN);
