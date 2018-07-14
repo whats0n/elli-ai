@@ -188,7 +188,7 @@ class FullScreen {
     this.trigger.clickable = false;
     this.cache.currentIndex = 0;
     this.cache.slides.removeClass(ACTIVE);
-    this.removeEvents();
+    // this.removeEvents();
     this.callEvent(EVENTS.FULLSCREEN_DESTROY, { slides: this.cache.slides });
   }
 

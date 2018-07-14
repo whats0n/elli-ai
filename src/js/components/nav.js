@@ -1,10 +1,23 @@
 import { TimelineMax, TweenMax } from 'gsap';
-import {OPEN, EVENTS} from '../constants';
+import {OPEN, EVENTS, BODY, WIN, FIXED, touchDetect} from '../constants';
 import connect from '../connect';
 
 const USELESS = 'is-useless';
 const nav = $('.js-nav');
 const navElements = nav.find('[data-animation-from]');
+let top = WIN.scrollTop();
+const disableScroll = () => {
+  top = WIN.scrollTop();
+  BODY.addClass(FIXED);
+  if (!touchDetect) return;
+  BODY.css('top', -top);
+};
+const enableScroll = () => {
+  BODY.removeClass(FIXED);
+  if (!touchDetect) return;
+  BODY.removeAttr('style');
+  WIN.scrollTop(top);
+};
 
 const animation = new TimelineMax({paused: true})
   .to(nav, 0.4, {
@@ -26,6 +39,7 @@ const animation = new TimelineMax({paused: true})
 
 const close = () => {
   nav.addClass(USELESS);
+  enableScroll();
   animation.reverse();
 };
 
@@ -33,6 +47,7 @@ const open = () => {
   nav.addClass(OPEN);
   nav.addClass(USELESS);
   connect.call(EVENTS.NAV_OPEN);
+  disableScroll();
   animation.play();
 };
 

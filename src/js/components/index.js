@@ -1,3 +1,5 @@
+import {WIN} from '../constants';
+
 import './events';
 import './nav';
 
@@ -47,6 +49,7 @@ const FadeTransition = Barba.BaseTransition.extend({
         onScroll.init();
         page.show();
         select.init();
+        WIN.scrollTop(0);
       });
   }
 });

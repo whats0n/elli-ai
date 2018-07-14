@@ -1,3 +1,5 @@
+import {BODY} from '../constants';
+
 const USELESS = 'is-useless';
 let currentTimeLine = null;
 
@@ -11,7 +13,7 @@ export const animateSection = props => {
   const bg = currentSlide.find('.js-section-bg');
   const colorBlocks = $('.js-color-block');
 
-  const theme = currentSlide.data('theme');
+  const theme = BODY.find(currentSlide).data('theme');
   theme ? colorBlocks.attr('data-theme', theme) : colorBlocks.removeAttr('data-theme');
 
   afterShow && afterShow();

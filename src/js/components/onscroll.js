@@ -18,7 +18,6 @@ const showOnScroll = () => {
 
 
 WIN.on('scroll resize', () => {
-  if (!$('.js-section').length) return;
   if (getMediaMaxWidth(widthMD)) {
     showHeader();
     showOnScroll();
