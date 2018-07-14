@@ -146,7 +146,6 @@ class FullScreen {
 
   onKeys(e) {
     if (getMediaMaxWidth(widthMD)) return;
-    console.log('click');
     this.trigger.clickable = false;
     switch (e.keyCode) {
       case keys.up:
@@ -209,12 +208,6 @@ class FullScreen {
   //!Event listeners
 
   //helpers
-  checkTiggers() {
-    console.log(`scrollable ${this.trigger.scrollable}`);
-    console.log(`scrollUp ${this.trigger.scrollUp}`);
-    console.log(`scrollDown ${this.trigger.scrollDown}`);
-  }
-
   enableTriggers(i, slide, dur) {
     if (slide.hasClass(ACTIVE)) {
       if (this.props.scrollableContainer) slide = slide.find(this.props.scrollableContainer);
