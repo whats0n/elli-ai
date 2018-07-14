@@ -1,0 +1,74 @@
+---
+title: Contact Us
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="page js-page" data-animation="default">
+		<div class="page__scrollable">
+			<div class="page__lines">
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+			</div>
+			<div class="container page__container">
+				<div class="inner page__inner">
+					<div class="contacts">
+						<div class="contacts__heading">
+							<h2 class="title-xl title-xl_black team__title js-page-title" data-animation-from="fade-top">Contact Us</h2>
+							<hr data-animation-from="scale-x" class="contacts__underline js-page-underline">
+						</div>
+						<div class="contacts__main">
+							<div class="contacts__content js-page-content">
+								<form action="#" class="contacts__form">
+									<div class="contacts__form-group">
+										{% for item in [
+											{ placeholder: 'Email Adress' },
+											{ placeholder: 'Full Name' },
+											{ select: { placeholder: 'Reason for contacting us', options: [ 'Option 1', 'Option 2', 'Option 3' ] } }
+										] %}
+											<div class="contacts__field" data-animation-from="fade-bottom">
+												{% if item.select %}
+													{{mixins.select(item.select)}}
+												{% else %}
+													<input type="text" class="input" placeholder="{{item.placeholder}}">
+												{% endif %}
+											</div>
+										{% endfor %}
+									</div>
+									<div class="contacts__form-group">
+										<div class="contacts__field" data-animation-from="fade-bottom">
+											<textarea rows="3" class="textarea" placeholder="Your Message"></textarea>
+										</div>
+									</div>
+									<div class="contacts__agreement" data-animation-from="fade-bottom">
+										{{mixins.checkbox({ content: 'ELLI TECHNOLOGIES represented by ACCESA IT GROUP GmbH will use the information you provide on this form to get in touch with you as per your request and only for this. Please tick to confirm your consent.' })}}
+									</div>
+									<div class="contacts__submit" data-animation-from="fade-bottom">
+										<button class="btn">
+											<span class="btn__text">Send</span>
+											{{mixins.icon('next', 'btn__arrow')}}
+										</button>
+									</div>
+								</form>
+							</div>
+							<div class="contacts__aside js-page-aside">
+								<div class="contacts__img" data-animation-from="fade">
+									<div class="contacts__img-in"></div>
+								</div>
+								<ul class="contacts__info">
+									{% for item in [ 'Innsbrucker Ring 15', '81673 Munich', 'Germany', '<a href="tel:+4989215485115">+49 89 2154 851 15</a>' ] %}
+										<li data-animation-from="fade-bottom">{{item | safe}}</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

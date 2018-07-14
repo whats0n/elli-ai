@@ -1,3 +1,28 @@
 {% macro icon(i, classList) %}
-<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+	<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro select(props) %}
+	<div class="select">
+		<select class="js-select" data-placeholder="{{props.placeholder}}">
+			<option></option>
+			{% for item in props.options %}
+				<option value="{{item}}">{{item}}</option>
+			{% endfor %}
+		</select>
+	</div>
+{% endmacro %}
+
+{% macro checkbox(props) %}
+	<label class="checkbox">
+		<input type="checkbox" class="checkbox__input">
+		<span class="checkbox__icon">
+			{{icon('checked', 'checkbox__icon-in')}}
+		</span>
+		{% if props.content %}
+			<span class="checkbox__content">
+				<span class="checkbox__content-in">{{props.content}}</span>
+			</span>
+		{% endif %}
+	</label>
 {% endmacro %}

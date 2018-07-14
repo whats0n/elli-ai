@@ -8,11 +8,11 @@
 		</button>
 		<ul class="nav__list">
 			{% for item in [
-				{ title: 'Home', href: 'page.html' },
+				{ title: 'Home', href: 'home.html' },
 				{ title: 'About', href: "about.html" },
 				{ title: 'Blog', href: 'blog.html' },
 				{ title: 'News', href: 'news.html' },
-				{ title: 'Contact' }
+				{ title: 'Contact', href: 'contacts.html' }
 			] %}
 				<li class="nav__item"><a href="{{item.href or '#'}}" class="nav__link" data-animation-from="fade-bottom">{{item.title}}</a></li>
 			{% endfor %}

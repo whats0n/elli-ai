@@ -1,0 +1,43 @@
+.checkbox
+	position: relative
+	display: inline-block
+	vertical-align: top
+	min-width: 21px
+	min-height: 21px
+	+nosel
+	&__input
+		display: none
+		&:checked
+			~ .checkbox
+				&__icon 
+					background: $blue
+					.checkbox__icon-in
+						opacity: 1
+	&__icon 
+		position: absolute
+		top: 50%
+		left: 0
+		margin-top: -11px
+		width: 21px
+		height: 21px
+		background: #e8e8e8
+		+vertical
+		transition: background 0.3s
+		cursor: pointer
+		&-in 
+			display: inline-block
+			vertical-align: middle
+			font-size: 11px
+			fill: $white
+			opacity: 0
+			transition: opacity 0.3s
+	&__content
+		padding-left: 31px
+		display: block
+		line-height: 21px
+		cursor: pointer
+	&__content-in
+		display: inline-block
+		vertical-align: middle
+		+f(10px, 500, 14px)
+		letter-spacing: 0.001em

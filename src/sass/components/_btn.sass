@@ -1,0 +1,29 @@
+.btn
+	color: $blue
+	background: none
+	font-family: $fontPrimary
+	+vertical
+	+sm 
+		padding: 30px
+		width: 100%
+		color: $white
+		background: $blue
+	+hover
+		.btn__arrow
+			transform: translate3d(5px,0,0)
+	&__text,
+	&__arrow
+		display: inline-block
+		vertical-align: middle
+	&__text
+		+f(12px, 400, 24px)
+		letter-spacing: 0.001em
+		+sm 
+			+f(16px, 700, 1)
+	&__arrow
+		margin-left: 15px
+		fill: currentColor
+		font-size: 21px
+		transition: transform 0.3s
+		+sm 
+			display: none

@@ -1,0 +1,60 @@
+.select
+	position: relative
+	font-family: $fontPrimary
+	+f(12px, 400, 1.2)
+	letter-spacing: 0.001em
+.select2
+	&-container
+		z-index: 100
+	&-selection 
+		height: auto
+		background: none !important
+	&-results__option
+		padding: 7px 
+		+f(12px, 400, 1.2)
+	&-container--open 
+		.select2-dropdown
+			border-radius: 0
+			background: $white
+			box-shadow: 0 1px 3px 1px rgba($black, 0.1)
+			&--below
+				margin-top: 10px
+				border-radius: 0
+			&--above
+				margin-top: -10px
+				border-radius: 0
+	&-dropdown
+		border-radius: 0
+		border: none
+	&-container--default .select2-selection--multiple,
+	&-container--default .select2-selection--single
+		border-bottom: 1px solid rgba(#060416, .17)
+		border-top: none
+		border-right: none
+		border-left: none
+		border-radius: 0
+	&-container--default 
+		&.select2-container--open
+			.select2-selection--single 
+				.select2-selection__arrow 
+					b
+						+arr(10, 8, $blue, b)
+						transform: rotate(180deg)
+		.select2-selection--single 
+			.select2-selection__rendered
+				padding: 7px 20px 7px 7px
+				color: $black
+				+f(12px, 400, 1.2)
+			.select2-selection__placeholder
+				color: rgba($black, 0.6)
+			.select2-selection__arrow
+				top: 0
+				right: 0
+				width: 12px
+				height: 100%
+				b
+					margin-top: -4px
+					+arr(10, 8, $blue, b)
+					transition: transform 0.3s
+		.select2-results__option--highlighted[aria-selected]
+			background: $blue

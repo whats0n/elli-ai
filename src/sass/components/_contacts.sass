@@ -1,0 +1,76 @@
+.contacts
+	+md 
+		padding-top: 40px
+		padding-bottom: 40px
+	&__underline
+		display: block
+		border: none
+		margin: 0
+		border-bottom: 2px solid #060416
+		max-width: 275px
+	&__heading,
+	&__main
+		padding: 0 45px
+		+md 
+			padding: 0
+	&__heading
+		margin-bottom: 60px
+		+sm 
+			margin-bottom: 0
+	&__main 
+		margin-right: -27%
+		+clr
+		+md 
+			margin-right: 0
+	&__content
+		padding-right: 20px
+		width: 61%
+		+md 
+			width: 53%
+		+sm
+			padding: 20px 0
+	&__aside
+		padding-top: 5px
+		width: 39%
+		+md 
+			width: 47%
+		+sm 
+			padding-top: 40px
+	&__content,
+	&__aside
+		float: left
+		+sm 
+			width: 100%
+	&__form-group
+		margin-bottom: 18px
+	&__field
+		padding: 11px 0
+		max-width: 275px
+		+sm 
+			max-width: 100%
+	&__agreement
+		padding-top: 50px
+		max-width: 360px
+		+sm 
+			padding-top: 22px
+	&__submit
+		padding-top: 55px
+		+sm 
+			padding-top: 35px
+			margin: 0 -30px
+	&__img
+		+sm 
+			margin: 0 -30px
+		&-in
+			padding-bottom: 25%
+			+cover
+			background-color: $blue
+	&__info
+		padding: 12px 5px
+		color: $black
+		+f(14px, 400, 29px)
+		a 
+			color: inherit
+			transition: color 0.3s
+			+hover 
+				color: $blue

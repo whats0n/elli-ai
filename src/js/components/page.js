@@ -100,11 +100,11 @@ const animations = {
       .play(0);
   },
 
-  blog(page) {
+  default(page) {
     buildMainTimeLine(page)
       .add(showMain(
         page.find('.js-page-title'), 
-        null,
+        page.find('.js-page-underline'),
         page.find('.js-page-description'),
         page.find('.js-page-label')
       ), MAIN_START)

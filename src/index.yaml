@@ -1,5 +1,8 @@
 ProjectTitle: elli-ai
 
 PageList:
-- file: page.html
-  ready: 50
+- file: home.html
+- file: about.html
+- file: blog.html
+- file: news.html
+- file: contacts.html
