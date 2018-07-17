@@ -9,12 +9,12 @@
 		<ul class="nav__list">
 			{% for item in [
 				{ title: 'Home', href: 'home.html' },
+				{ title: 'Use Cases', href: 'use-cases.html' },
+				{ title: 'Capability', href: 'capability.html' },
 				{ title: 'About', href: "about.html" },
 				{ title: 'Blog', href: 'blog.html' },
 				{ title: 'News', href: 'news.html' },
-				{ title: 'Contact', href: 'contacts.html' },
-				{ title: 'Use Cases', href: 'use-cases.html' },
-				{ title: 'Capability', href: 'capability.html' }
+				{ title: 'Contact', href: 'contacts.html' }
 			] %}
 				<li class="nav__item"><a href="{{item.href or '#'}}" class="nav__link" data-animation-from="fade-bottom">{{item.title}}</a></li>
 			{% endfor %}
