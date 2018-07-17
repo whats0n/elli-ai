@@ -25,6 +25,12 @@ gulp.task('copy:rootfiles', function () {
         .pipe(gulp.dest(config.dest.root));
 });
 
+gulp.task('copy:video', function () {
+    return gulp
+        .src(config.src.root + '/video/*.*')
+        .pipe(gulp.dest(config.dest.root + '/video'));
+});
+
 gulp.task('copy:img', function () {
     return gulp
         .src([
@@ -39,8 +45,10 @@ gulp.task('copy', [
     // 'copy:rootfiles',
     // 'copy:lib',
     // 'copy:data',
-    'copy:fonts'
+    'copy:fonts',
+    'copy:video'
 ]);
 gulp.task('copy:watch', function () {
     gulp.watch(config.src.img + '/*', ['copy']);
+    gulp.watch(config.src.video + '/*', ['copy']);
 });

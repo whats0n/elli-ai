@@ -22,11 +22,20 @@
 		.logo 
 			+md 
 				color: $blue
+	&__btn
+		position: absolute
+		z-index: 200
+		top: 55px
+		right: 45px
+		+md 
+			top: 23px
+			right: 30px
 	&__inner
 		padding-top: 34px
+		min-height: 70px
 		+md 
-			padding-top: 15px
-			padding-bottom: 15px
+			padding-top: 10px
+			padding-bottom: 10px
 
 .btn-nav
 	position: absolute
@@ -65,8 +74,13 @@
 	transition: color 0.3s
 	+md 
 		float: right
+		margin-right: 170px
+	+xxs
+		margin: 10px 150px 0 0
 	&__icon
 		fill: currentColor
 		font-size: 56px
 		+md 
-			font-size: 40px
+			font-size: 47px
+		+xxs
+			font-size: 30px

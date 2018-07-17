@@ -14,6 +14,7 @@
 		left: 0
 		right: 0
 		bottom: 0
+		overflow: hidden
 		&-in 
 			position: absolute
 			top: 0
@@ -24,6 +25,7 @@
 			&:before
 				content: ''
 				position: absolute
+				z-index: 3
 				top: 0
 				left: 0
 				right: 0
@@ -37,6 +39,13 @@
 		&-desktop
 			+sm 
 				display: none
+	&__video
+		position: absolute
+		top: 50%
+		left: 50%
+		min-width: 100%
+		min-height: 100%
+		transform: translate3d(-50%,-50%,0)
 	&__scrollable
 		overflow: auto
 		height: 100%
@@ -88,6 +97,7 @@
 		float: right
 		padding-left: 45px
 		width: 66%
+		min-height: 180px
 		+md 
 			float: none
 			padding-left: 0
@@ -132,6 +142,8 @@
 			margin: 0 0 50px
 		+sm 
 			margin-bottom: 30px
+		&_full 
+			max-width: none
 		&:after
 			content: ''
 			display: block
@@ -144,13 +156,25 @@
 			color: $red
 	&__description
 		margin-top: 30px
-		max-width: 420px
+		// max-width: 420px
+		// max-width: 600px
 		color: #17191c
 		+f(18px, 400, 1.667)
 		+sm 
 			display: none
 		p
+			max-width: 600px
 			opacity: 0.43
+			&:not(:last-child)
+				margin-bottom: 20px
+		a 
+			color: $blue 
+			+hover
+				text-decoration: underline
+	&__figure
+		img,
+		video
+			max-width: 66.6%
 	&__lines
 		position: absolute
 		top: 0

@@ -44,9 +44,10 @@ export const showHeader = () => {
   const navOpen = $('.js-nav-open');
   const logo = $('.js-logo');
   const features = $('.js-features');
+  const btn = $('.js-header-btn');
 
   return new TimelineMax()
-    .staggerTo([navOpen, logo], 0.6, {
+    .staggerTo([navOpen, logo, btn], 0.6, {
       opacity: 1,
       y: 0,
       ease: Power2.easeOut
