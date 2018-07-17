@@ -25,18 +25,18 @@ title: Capability
 								</div>
 							</div>
 							{% for item in [
-								{ icon: 'multi-channel', title: 'Multi-channel' },
+								{ target: 'multi-channel.html', icon: 'multi-channel', title: 'Multi-channel' },
 								{ icon: 'robotic', title: 'Robotic Process Automation' },
 								{ icon: 'cloud', title: 'Cloud or On-premise' }
 							] %}
-								<div class="news__item js-news-item">
+								<a href="{{item.target or '#'}}" class="news__item js-news-item">
 									<div class="news__icon js-news-img" data-animation-from="fade">
 										{{mixins.icon(item.icon, 'news__icon-in')}}
 									</div>
 									<div class="news__description js-news-description" data-animation-from="fade-bottom">
 										<p>{{item.title}}</p>
 									</div>
-								</div>
+								</a>
 							{% endfor %}
 						</div>
 					</div>
