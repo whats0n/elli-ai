@@ -1,0 +1,49 @@
+---
+title: Use Cases
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<div class="page js-page" data-animation="news">
+		<div class="page__scrollable">
+			<div class="page__lines">
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+				<span class="page__line js-page-line"></span>
+			</div>
+			<div class="container page__container">
+				<div class="inner page__inner">
+					<div class="news">
+						<div class="news__items">
+							<div class="news__item">
+								<div class="news__box">
+									<div class="news__heading">
+										<h2 class="title-xl title-xl_black news__title js-page-title" data-animation-from="fade-top">Use Cases</h2>
+										<hr data-animation-from="scale-x" class="news__underline js-page-underline">
+									</div>
+								</div>
+							</div>
+							{% for item in [
+								{ icon: 'multi-channel', title: 'Multi-channel' },
+								{ icon: 'robotic', title: 'Robotic Process Automation' },
+								{ icon: 'cloud', title: 'Cloud or On-premise' }
+							] %}
+								<div class="news__item js-news-item">
+									<div class="news__icon js-news-img" data-animation-from="fade">
+										{{mixins.icon(item.icon, 'news__icon-in')}}
+									</div>
+									<div class="news__description js-news-description" data-animation-from="fade-bottom">
+										<p>{{item.title}}</p>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
