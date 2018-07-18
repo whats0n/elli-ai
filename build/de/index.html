@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" media="all" href="css/app.css"> </head>
+    <link rel="stylesheet" media="all" href="../css/app.css"> </head>
   <body>
     <!-- begin header -->
     <header class="header js-header js-color-block">
@@ -17,14 +17,14 @@
         <span></span>
       </button>
       <a href="#" class="sm-btn header__btn js-header-btn" data-animation-from="fade-top">Request a Demo</a>
+      <a href="../" class="header__link js-header-btn js-lang" data-animation-from="fade-top">EN</a>
       <div class="container">
         <div class="inner header__inner">
-          <a href="home.html" class="logo js-logo" data-animation-from="fade-top">
+          <a href="../home.html" class="logo js-logo" data-animation-from="fade-top">
             <svg class="icon icon-logo logo__icon">
-              <use xlink:href="img/sprite.svg#icon-logo"></use>
+              <use xlink:href="../img/sprite.svg#icon-logo"></use>
             </svg>
           </a>
-          <a href="#" class="header__link js-header-btn" data-animation-from="fade-top">DE</a>
         </div>
       </div>
     </header>
@@ -39,43 +39,43 @@
         </button>
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="home.html" class="nav__link" data-animation-from="fade-bottom">Home</a>
+            <a href="../de/index.html" class="nav__link js-nav-link" data-href="index.html" data-animation-from="fade-bottom">Home</a>
           </li>
           <li class="nav__item">
-            <a href="use-cases.html" class="nav__link" data-animation-from="fade-bottom">Use Cases</a>
+            <a href="../de/use-cases.html" class="nav__link js-nav-link" data-href="use-cases.html" data-animation-from="fade-bottom">Use Cases</a>
           </li>
           <li class="nav__item">
-            <a href="capabilities.html" class="nav__link" data-animation-from="fade-bottom">Capabilities</a>
+            <a href="../de/capabilities.html" class="nav__link js-nav-link" data-href="capabilities.html" data-animation-from="fade-bottom">Capabilities</a>
           </li>
           <li class="nav__item">
-            <a href="about.html" class="nav__link" data-animation-from="fade-bottom">About</a>
+            <a href="../de/about.html" class="nav__link js-nav-link" data-href="about.html" data-animation-from="fade-bottom">About</a>
           </li>
           <li class="nav__item">
-            <a href="blog.html" class="nav__link" data-animation-from="fade-bottom">Blog</a>
+            <a href="../de/blog.html" class="nav__link js-nav-link" data-href="blog.html" data-animation-from="fade-bottom">Blog</a>
           </li>
           <li class="nav__item">
-            <a href="news.html" class="nav__link" data-animation-from="fade-bottom">News</a>
+            <a href="../de/news.html" class="nav__link js-nav-link" data-href="news.html" data-animation-from="fade-bottom">News</a>
           </li>
           <li class="nav__item">
-            <a href="contacts.html" class="nav__link" data-animation-from="fade-bottom">Contact</a>
+            <a href="../de/contacts.html" class="nav__link js-nav-link" data-href="contacts.html" data-animation-from="fade-bottom">Contact</a>
           </li>
         </ul>
         <div class="nav__lang" data-animation-from="fade-bottom">
-          <a href="#">DE</a>
+          <a href="../" class="js-lang">EN</a>
         </div>
       </div>
     </div>
     <!-- end nav -->
     <!-- BEGIN content -->
     <div id="barba-wrapper">
-      <div class="barba-container">
+      <div class="barba-container js-barba-container" data-lang-title="EN" data-lang-href="../" data-lang-folder="../de/">
         <div class="fullscreen js-fullscreen">
           <div class="section section_bg fullscreen__section js-section js-fullscreen-section" data-theme="white">
             <div class="section__bg js-section-bg">
               <div class="section__bg-in section__bg-desktop">
-                <video src="video/home-1.mp4" class="section__video" muted loop playsinline autoplay></video>
+                <video src="../video/home-1.mp4" class="section__video" muted loop playsinline autoplay></video>
               </div>
-              <div class="section__bg-in section__bg-mobile" style="background-image: url(img/main-mobile.jpg);"></div>
+              <div class="section__bg-in section__bg-mobile" style="background-image: url(../img/main-mobile.jpg);"></div>
             </div>
             <div class="section__lines">
               <span class="section__line js-section-line"></span>
@@ -90,9 +90,9 @@
                     <div class="section__footer">
                       <div class="sm-box section__sm-box">
                         <div class="sm-box__figure" data-animation-from="fade">
-                          <img src="img/multi-channel-white.png" alt="icon" class="sm-box__icon"> </div>
+                          <img src="../img/multi-channel-white.png" alt="icon" class="sm-box__icon"> </div>
                         <div class="sm-box__content">
-                          <a href="#" class="sm-box__title" data-animation-from="fade-bottom">Artificial Intelligence infused Service Operations</a>
+                          <div class="sm-box__title" data-animation-from="fade-bottom">Artificial Intelligence infused Service Operations</div>
                           <div class="sm-box__description" data-animation-from="fade-bottom">
                             <p>ELLI-AI is Europe’s most lean and cost-effective Virtual Enterprise Assistant which is acting like an Executive Assistant for each employee.</p>
                           </div>
@@ -128,9 +128,6 @@
                     <p>on requests for things preventing us from getting our job done, ELLI-AI can help reduce this significantly.</p>
                     <figure class="section__figure" data-animation-from="fade-bottom">
                       <video src="https://cdn.biteable.com/58/eb/7206396/6027089_58eb4dd609b0038c8db076b75dcb4ff7fd4f5049.mp4" controls poster="https://cdn.biteable.com/58/eb/7206396/6027089_58eb4dd609b0038c8db076b75dcb4ff7fd4f5049-poster-large.jpg"></video>
-                      <!-- <div class="section__iframe">
-									<iframe frameborder="0" src="https://biteable.com/watch/embed/elli-aiexplainer-1823750/58eb4dd609b0038c8db076b75dcb4ff7fd4f5049?autoplay=0" allowfullscreen="true"></iframe>
-								</div> -->
                     </figure>
                   </div>
                 </div>
@@ -152,7 +149,7 @@
                     <p>ELLI-AI can augment staff by communicating with users via natural dialog like human interactions.</p>
                     <p>ELLI-AI overlays existing business systems and processes via intelligent process automation.</p>
                     <figure class="section__figure" data-animation-from="fade-bottom">
-                      <img src="img/business-architecture-elli.png" alt="image"> </figure>
+                      <img src="../img/business-architecture-elli.png" alt="image"> </figure>
                   </div>
                 </div>
               </div>
@@ -175,20 +172,20 @@
                     </div>
                   </div>
                   <div class="box section__box">
-                    <a href="use-cases.html" class="box__inner">
+                    <a href="use-cases.html" class="box__inner js-nav-link" data-href="use-cases.html">
                       <div class="box__figure" data-animation-from="fade-bottom">
                         <svg class="icon icon-business box__icon">
-                          <use xlink:href="img/sprite.svg#icon-business"></use>
+                          <use xlink:href="../img/sprite.svg#icon-business"></use>
                         </svg>
                       </div>
                       <div class="box__title" data-animation-from="fade-bottom">Business Areas</div>
                     </a>
                   </div>
                   <div class="box section__box">
-                    <a href="use-cases.html" class="box__inner">
+                    <a href="use-cases.html" class="box__inner js-nav-link" data-href="use-cases.html">
                       <div class="box__figure" data-animation-from="fade-bottom">
                         <svg class="icon icon-industries box__icon">
-                          <use xlink:href="img/sprite.svg#icon-industries"></use>
+                          <use xlink:href="../img/sprite.svg#icon-industries"></use>
                         </svg>
                       </div>
                       <div class="box__title" data-animation-from="fade-bottom">Industries</div>
@@ -212,30 +209,30 @@
                     <h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">How does ELLI-AI fit in your organization infrastructure?</h2>
                   </div>
                   <div class="box section__box">
-                    <a href="capabilities.html" class="box__inner">
+                    <a href="capabilities.html" class="box__inner js-nav-link" data-href="capabilities.html">
                       <div class="box__figure" data-animation-from="fade-bottom">
                         <svg class="icon icon-multi-channel box__icon">
-                          <use xlink:href="img/sprite.svg#icon-multi-channel"></use>
+                          <use xlink:href="../img/sprite.svg#icon-multi-channel"></use>
                         </svg>
                       </div>
                       <div class="box__title" data-animation-from="fade-bottom">Multi-channel</div>
                     </a>
                   </div>
                   <div class="box section__box">
-                    <a href="capabilities.html" class="box__inner">
+                    <a href="capabilities.html" class="box__inner js-nav-link" data-href="capabilities.html">
                       <div class="box__figure" data-animation-from="fade-bottom">
                         <svg class="icon icon-robotic box__icon">
-                          <use xlink:href="img/sprite.svg#icon-robotic"></use>
+                          <use xlink:href="../img/sprite.svg#icon-robotic"></use>
                         </svg>
                       </div>
                       <div class="box__title" data-animation-from="fade-bottom">Robotic Process Automation</div>
                     </a>
                   </div>
                   <div class="box section__box">
-                    <a href="capabilities.html" class="box__inner">
+                    <a href="capabilities.html" class="box__inner js-nav-link" data-href="capabilities.html">
                       <div class="box__figure" data-animation-from="fade-bottom">
                         <svg class="icon icon-cloud box__icon">
-                          <use xlink:href="img/sprite.svg#icon-cloud"></use>
+                          <use xlink:href="../img/sprite.svg#icon-cloud"></use>
                         </svg>
                       </div>
                       <div class="box__title" data-animation-from="fade-bottom">Cloud or On-premise</div>
@@ -258,17 +255,17 @@
                   <h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">Testimonials</h2>
                   <div class="testimonials js-testimonials" data-animation-from="fade-bottom">
                     <div class="testimonials__slide">
-                      <p>"Elli is a symbol of digital transformation. It pushes companies into the future.”
+                      <p>&quot;Elli is a symbol of digital transformation. It pushes companies into the future.&quot;
                         <em>Iulian Iuga, CEO</em>
                       </p>
                     </div>
                     <div class="testimonials__slide">
-                      <p>"Conversational AI-first will supersede cloud-first, mobile-first as the most important, high-level imperative throughout 2027. It will be a new IT paradigm, more than a trend.”
+                      <p>&quot;Conversational AI-first will supersede cloud-first, mobile-first as the most important, high-level imperative throughout 2027. It will be a new IT paradigm, more than a trend.&quot;
                         <em>Gartner</em>
                       </p>
                     </div>
                     <div class="testimonials__slide">
-                      <p>"Elli is the go-to preferred agent when I need something in my company. If it cannot help me on the spot, it will guide me to a solution as soon as possible.”
+                      <p>&quot;Elli is the go-to preferred agent when I need something in my company. If it cannot help me on the spot, it will guide me to a solution as soon as possible.&quot;
                         <em>Nicholas Guy, Software Developer</em>
                       </p>
                     </div>
@@ -290,8 +287,8 @@
                   <h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">STAY FRIENDS WITH ELLI-AI!</h2>
                   <div class="section__description" data-animation-from="fade-bottom">
                     <p>Join our friend e-mail list for the latest news, product updates, events, and more only related to ELLI-AI.</p>
-                    <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at info@elli- ai.com. We will treat your information with respect. By entering your e-mail address
-                      and clicking below, you agree that we may process your information in accordance with these terms.</p>
+                    <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at
+                      <a href='mailto:info@elli-ai.com'>info@elli-ai.com</a>. We will treat your information with respect. By entering your e-mail address and clicking below, you agree that we may process your information in accordance with these terms.</p>
                   </div>
                 </div>
               </div>
@@ -303,7 +300,11 @@
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js"></script>
+    <script>
+      window.rootPath = '../';
+
+    </script>
+    <script type="text/javascript" src="../js/app.js"></script>
     <!-- END scripts -->
   </body>
 </html>

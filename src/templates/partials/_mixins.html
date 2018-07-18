@@ -1,5 +1,5 @@
-{% macro icon(i, classList) %}
-	<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% macro icon(i, classList, path) %}
+	<svg class="icon icon-{{i}} {{classList}}"><use xlink:href="{{path}}img/sprite.svg#icon-{{i}}"></use></svg>
 {% endmacro %}
 
 {% macro select(props) %}
@@ -17,7 +17,7 @@
 	<label class="checkbox">
 		<input type="checkbox" class="checkbox__input">
 		<span class="checkbox__icon">
-			{{icon('checked', 'checkbox__icon-in')}}
+			{{icon('checked', 'checkbox__icon-in', props.path)}}
 		</span>
 		{% if props.content %}
 			<span class="checkbox__content">

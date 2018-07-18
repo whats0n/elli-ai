@@ -31,7 +31,7 @@ title: Capability
 							] %}
 								<a href="{{item.target or '#'}}" class="news__item js-news-item">
 									<div class="news__icon js-news-img" data-animation-from="fade">
-										{{mixins.icon(item.icon, 'news__icon-in')}}
+										{{mixins.icon(item.icon, 'news__icon-in', rootPath)}}
 									</div>
 									<div class="news__description js-news-description" data-animation-from="fade-bottom">
 										<p>{{item.title}}</p>

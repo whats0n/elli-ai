@@ -43,12 +43,12 @@ title: Contact Us
 										</div>
 									</div>
 									<div class="contacts__agreement" data-animation-from="fade-bottom">
-										{{mixins.checkbox({ content: 'ELLI TECHNOLOGIES represented by ACCESA IT GROUP GmbH will use the information you provide on this form to get in touch with you as per your request and only for this. Please tick to confirm your consent.' })}}
+										{{mixins.checkbox({ content: 'ELLI TECHNOLOGIES represented by ACCESA IT GROUP GmbH will use the information you provide on this form to get in touch with you as per your request and only for this. Please tick to confirm your consent.', path: rootPath })}}
 									</div>
 									<div class="contacts__submit" data-animation-from="fade-bottom">
 										<button class="btn">
 											<span class="btn__text">Send</span>
-											{{mixins.icon('next', 'btn__arrow')}}
+											{{mixins.icon('next', 'btn__arrow', rootPath)}}
 										</button>
 									</div>
 								</form>

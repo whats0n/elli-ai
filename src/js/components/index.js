@@ -26,6 +26,27 @@ select.init();
 
 testimonials.init();
 
+const updateLinks = container => {
+  const lang = {
+    href:  container.data('lang-href'),
+    title:  container.data('lang-title'),
+    folder: container.data('lang-folder')
+  };
+  console.log(lang.title);
+
+  $('.js-lang')
+    .attr('href', lang.href)
+    .html(lang.title);
+
+  $('.js-nav-link').each((i, link) => {
+    link = $(link);
+    const href = link.data('href');
+    link.attr('href', lang.folder + href);
+  });
+};
+
+updateLinks($('.js-barba-container'));
+
 const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
     Promise
@@ -53,6 +74,7 @@ const FadeTransition = Barba.BaseTransition.extend({
         page.show();
         select.init();
         WIN.scrollTop(0);
+        updateLinks($(this.newContainer));
       });
   }
 });

@@ -7,20 +7,12 @@
 			<span></span>
 		</button>
 		<ul class="nav__list">
-			{% for item in [
-				{ title: 'Home', href: 'home.html' },
-				{ title: 'Use Cases', href: 'use-cases.html' },
-				{ title: 'Capabilities', href: 'capabilities.html' },
-				{ title: 'About', href: "about.html" },
-				{ title: 'Blog', href: 'blog.html' },
-				{ title: 'News', href: 'news.html' },
-				{ title: 'Contact', href: 'contacts.html' }
-			] %}
-				<li class="nav__item"><a href="{{item.href or '#'}}" class="nav__link" data-animation-from="fade-bottom">{{item.title}}</a></li>
+			{% for item in nav %}
+				<li class="nav__item"><a href="{{version.folder}}{{item.href or '#'}}" class="nav__link js-nav-link" data-href="{{item.href or '#'}}" data-animation-from="fade-bottom">{{item.title}}</a></li>
 			{% endfor %}
 		</ul>
 		<div class="nav__lang" data-animation-from="fade-bottom">
-			<a href="#">DE</a>
+			<a href="{{version.href}}" class="js-lang">{{version.title}}</a>
 		</div>
 	</div>
 </div>

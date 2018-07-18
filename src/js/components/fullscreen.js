@@ -85,7 +85,7 @@ class FullScreen {
         <div class="fullscreen__counter-total">/${this.cache.length}</div>
         <div class="fullscreen__arrows">
           <button class="fullscreen__arr fullscreen__next js-fullscreen-next">
-            <svg class="icon icon-down fullscreen__arr-icon"><use xlink:href="img/sprite.svg#icon-down"></use></svg>
+            <svg class="icon icon-down fullscreen__arr-icon"><use xlink:href="${window.rootPath}img/sprite.svg#icon-down"></use></svg>
           </button>
         </div>
       </div>

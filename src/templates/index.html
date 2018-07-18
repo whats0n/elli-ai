@@ -9,9 +9,9 @@ title: Home
 		<div class="section section_bg fullscreen__section js-section js-fullscreen-section" data-theme="white">
 			<div class="section__bg js-section-bg">
 				<div class="section__bg-in section__bg-desktop">
-					<video src="video/home-1.mp4" class="section__video" muted loop playsinline autoplay></video>
+					<video src="{{rootPath}}video/home-1.mp4" class="section__video" muted loop playsinline autoplay></video>
 				</div>
-				<div class="section__bg-in section__bg-mobile" style="background-image: url(img/main-mobile.jpg);"></div>
+				<div class="section__bg-in section__bg-mobile" style="background-image: url({{rootPath}}img/main-mobile.jpg);"></div>
 			</div>
 			<div class="section__lines">
 				<span class="section__line js-section-line"></span>
@@ -22,16 +22,16 @@ title: Home
 				<div class="container section__container">
 					<div class="inner section__inner">
 						<div class="section__content">
-							<h1 class="title-xl section__title" data-animation-from="fade-bottom">Helping people in organizations do&nbsp;their job faster</h1>
+							<h1 class="title-xl section__title" data-animation-from="fade-bottom">{{main.title | safe}}</h1>
 							<div class="section__footer">
 								<div class="sm-box section__sm-box">
 									<div class="sm-box__figure" data-animation-from="fade">
-										<img src="img/multi-channel-white.png" alt="icon" class="sm-box__icon">
+										<img src="{{rootPath}}img/multi-channel-white.png" alt="icon" class="sm-box__icon">
 									</div>
 									<div class="sm-box__content">
-										<a href="#" class="sm-box__title" data-animation-from="fade-bottom">Artificial Intelligence infused Service Operations</a>
+										<div class="sm-box__title" data-animation-from="fade-bottom">{{main.item.title | safe}}</div>
 										<div class="sm-box__description" data-animation-from="fade-bottom">
-											<p>ELLI-AI is Europe’s most lean and cost-effective Virtual Enterprise Assistant which is acting like an Executive Assistant for each employee.</p>
+											<p>{{main.item.description | safe}}</p>
 										</div>
 									</div>
 								</div>
@@ -40,7 +40,7 @@ title: Home
 					</div>
 				</div>
 			</div>
-			<div class="section__label js-color-block" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label js-color-block" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		{#<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -67,7 +67,7 @@ title: Home
 							<div class="box section__box">
 								<a href="#" class="box__inner">
 									<div class="box__figure" data-animation-from="fade-bottom">
-										<img src="img/{{item.icon}}.png" alt="icon" class="box__icon">
+										<img src="{{rootPath}}img/{{item.icon}}.png" alt="icon" class="box__icon">
 									</div>
 									<div class="box__title" data-animation-from="fade-bottom">{{item.title | safe}}</div>
 								</a>
@@ -87,32 +87,25 @@ title: Home
 			<div class="section__scrollable js-fullscreen-section-scrollable">
 				<div class="container section__container">
 					<div class="inner section__inner">
-						<h2 class="title-md section__subtitle" data-animation-from="fade-bottom">We spend roughly <span>30%</span> of our job time&nbsp;to&nbsp;:</h2>
+						<h2 class="title-md section__subtitle" data-animation-from="fade-bottom">{{spend.title | safe}}</h2>
 						<ul class="list">
-							{% for item in [
-								'submit',
-								'track',
-								'reply',
-								'escalate',
-								'clarify',
-								'wait for response'
-							] %}
+							{% for item in spend.items %}
 								<li class="list__item" data-animation-from="fade-bottom">{{item | safe}}</li>
 							{% endfor %}
 						</ul>
 						<div class="section__description" data-animation-from="fade-bottom">
-							<p>on requests for things preventing us from getting our job done, ELLI-AI can help reduce this significantly.</p>
+							<p>{{spend.description | safe}}</p>
 							<figure class="section__figure" data-animation-from="fade-bottom">
 								<video src="https://cdn.biteable.com/58/eb/7206396/6027089_58eb4dd609b0038c8db076b75dcb4ff7fd4f5049.mp4" controls poster="https://cdn.biteable.com/58/eb/7206396/6027089_58eb4dd609b0038c8db076b75dcb4ff7fd4f5049-poster-large.jpg"></video>
-								<!-- <div class="section__iframe">
+								{#<div class="section__iframe">
 									<iframe frameborder="0" src="https://biteable.com/watch/embed/elli-aiexplainer-1823750/58eb4dd609b0038c8db076b75dcb4ff7fd4f5049?autoplay=0" allowfullscreen="true"></iframe>
-								</div> -->
+								</div>#}
 							</figure>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -123,18 +116,19 @@ title: Home
 			<div class="section__scrollable js-fullscreen-section-scrollable">
 				<div class="container section__container">
 					<div class="inner section__inner">
-						<h2 class="title-md section__subtitle" data-animation-from="fade-bottom">Is augmenting staff & overlaying existing systems</h2>
+						<h2 class="title-md section__subtitle" data-animation-from="fade-bottom">{{system.title | safe}}</h2>
 						<div class="section__description" data-animation-from="fade-bottom">
-							<p>ELLI-AI can augment staff by communicating with users via natural dialog like human interactions.</p>
-							<p>ELLI-AI overlays existing business systems and processes via intelligent process automation.</p>
+							{% for item in system.description %}
+								<p>{{item | safe}}</p>
+							{% endfor %}
 							<figure class="section__figure" data-animation-from="fade-bottom">
-								<img src="img/business-architecture-elli.png" alt="image">
+								<img src="{{rootPath}}img/business-architecture-elli.png" alt="image">
 							</figure>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -146,19 +140,16 @@ title: Home
 				<div class="container section__container">
 					<div class="inner section__inner">
 						<div class="sm-info section__sm-info">
-							<h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">Who is ELLI-AI helping?</h2>
+							<h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">{{help.title | safe}}</h2>
 							<div class="sm-info__description" data-animation-from="fade-bottom">
-								<p>navigate use-cases per</p>
+								<p>{{help.description | safe}}</p>
 							</div>
 						</div>
-						{% for item in [
-							{ icon: 'business', title: 'Business Areas' },
-							{ icon: 'industries', title: 'Industries' }
-						] %}
+						{% for item in help.items %}
 							<div class="box section__box">
-								<a href="use-cases.html" class="box__inner">
+								<a href="use-cases.html" class="box__inner js-nav-link" data-href="use-cases.html">
 									<div class="box__figure" data-animation-from="fade-bottom">
-										{{mixins.icon(item.icon, 'box__icon')}}
+										{{mixins.icon(item.icon, 'box__icon', rootPath)}}
 									</div>
 									<div class="box__title" data-animation-from="fade-bottom">{{item.title | safe}}</div>
 								</a>
@@ -167,7 +158,7 @@ title: Home
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -179,17 +170,13 @@ title: Home
 				<div class="container section__container">
 					<div class="inner section__inner">
 						<div class="sm-info section__sm-info">
-							<h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">How does ELLI-AI fit in your organization infrastructure?</h2>
+							<h2 class="title-lg sm-info__title" data-animation-from="fade-bottom">{{infrastructure.title | safe}}</h2>
 						</div>
-						{% for item in [
-							{ icon: 'multi-channel', title: 'Multi-channel' },
-							{ icon: 'robotic', title: 'Robotic Process Automation' },
-							{ icon: 'cloud', title: 'Cloud or On-premise' }
-						] %}
+						{% for item in infrastructure.items %}
 							<div class="box section__box">
-								<a href="capabilities.html" class="box__inner">
+								<a href="capabilities.html" class="box__inner js-nav-link" data-href="capabilities.html">
 									<div class="box__figure" data-animation-from="fade-bottom">
-										{{mixins.icon(item.icon, 'box__icon')}}
+										{{mixins.icon(item.icon, 'box__icon', rootPath)}}
 									</div>
 									<div class="box__title" data-animation-from="fade-bottom">{{item.title | safe}}</div>
 								</a>
@@ -198,7 +185,7 @@ title: Home
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -209,22 +196,18 @@ title: Home
 			<div class="section__scrollable js-fullscreen-section-scrollable">
 				<div class="container section__container">
 					<div class="inner section__inner">
-						<h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">Testimonials</h2>
+						<h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">{{testimonials.title | safe}}</h2>
 						<div class="testimonials js-testimonials" data-animation-from="fade-bottom">
-							{% for item in [
-								'"Elli is a symbol of digital transformation. It pushes companies into the future.” <em>Iulian Iuga, CEO</em>',
-								'"Conversational AI-first will supersede cloud-first, mobile-first as the most important, high-level imperative throughout 2027. It will be a new IT paradigm, more than a trend.” <em>Gartner</em>',
-								'"Elli is the go-to preferred agent when I need something in my company. If it cannot help me on the spot, it will guide me to a solution as soon as possible.” <em>Nicholas Guy, Software Developer</em>'
-							] %}
-							<div class="testimonials__slide">
-								<p>{{item | safe}}</p>
-							</div>
+							{% for item in testimonials.items %}
+								<div class="testimonials__slide">
+									<p>{{item | safe}}</p>
+								</div>
 							{% endfor %}
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 		<div class="section fullscreen__section js-section js-fullscreen-section">
 			<div class="section__lines">
@@ -235,15 +218,16 @@ title: Home
 			<div class="section__scrollable js-fullscreen-section-scrollable">
 				<div class="container section__container">
 					<div class="inner section__inner">
-						<h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">STAY FRIENDS WITH ELLI-AI!</h2>
+						<h2 class="title-md section__subtitle section__subtitle_full" data-animation-from="fade-bottom">{{subscribe.title | safe}}</h2>
 						<div class="section__description" data-animation-from="fade-bottom">
-							<p>Join our friend e-mail list for the latest news, product updates, events, and more only related to ELLI-AI.</p>
-							<p>You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at info@elli- ai.com. We will treat your information with respect. By entering your e-mail address and clicking below, you agree that we may process your information in accordance with these terms.</p>
+							{% for item in subscribe.description %}
+								<p>{{item | safe}}</p>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="section__label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
+			<div class="section__label" data-animation-from="fade-bottom">{{copyrights}}</div>
 		</div>
 	</div>
 

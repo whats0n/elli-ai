@@ -1,0 +1,59 @@
+{
+	"main": {
+		"title": "Helping people in organizations do&nbsp;their job faster",
+		"item": {
+			"title": "Artificial Intelligence infused Service Operations",
+			"description": "ELLI-AI is Europe’s most lean and cost-effective Virtual Enterprise Assistant which is acting like an Executive Assistant for each employee."
+		}
+	},
+	"spend": {
+		"title": "We spend roughly <span>30%</span> of our job time&nbsp;to&nbsp;:",
+		"items": [
+			"submit",
+			"track",
+			"reply",
+			"escalate",
+			"clarify",
+			"wait for response"
+		],
+		"description": "on requests for things preventing us from getting our job done, ELLI-AI can help reduce this significantly."
+	},
+	"system": {
+		"title": "Is augmenting staff & overlaying existing systems",
+		"description": [
+			"ELLI-AI can augment staff by communicating with users via natural dialog like human interactions.",
+			"ELLI-AI overlays existing business systems and processes via intelligent process automation."
+		]
+	},
+	"help": {
+		"title": "Who is ELLI-AI helping?",
+		"description": "navigate use-cases per",
+		"items": [
+			{ "icon": "business", "title": "Business Areas" },
+			{ "icon": "industries", "title": "Industries" }
+		]
+	},
+	"infrastructure": {
+		"title": "How does ELLI-AI fit in your organization infrastructure?",
+		"items": [
+			{ "icon": "multi-channel", "title": "Multi-channel" },
+			{ "icon": "robotic", "title": "Robotic Process Automation" },
+			{ "icon": "cloud", "title": "Cloud or On-premise" }
+		]
+	},
+	"testimonials": {
+		"title": "Testimonials",
+		"items": [
+			"&quot;Elli is a symbol of digital transformation. It pushes companies into the future.&quot; <em>Iulian Iuga, CEO</em>",
+			"&quot;Conversational AI-first will supersede cloud-first, mobile-first as the most important, high-level imperative throughout 2027. It will be a new IT paradigm, more than a trend.&quot; <em>Gartner</em>",
+			"&quot;Elli is the go-to preferred agent when I need something in my company. If it cannot help me on the spot, it will guide me to a solution as soon as possible.&quot; <em>Nicholas Guy, Software Developer</em>"
+		]
+	},
+	"subscribe": {
+		"title": "STAY FRIENDS WITH ELLI-AI!",
+		"description": [
+			"Join our friend e-mail list for the latest news, product updates, events, and more only related to ELLI-AI.",
+			"You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at <a href='mailto:info@elli-ai.com'>info@elli-ai.com</a>. We will treat your information with respect. By entering your e-mail address and clicking below, you agree that we may process your information in accordance with these terms."
+		]
+	}
+}

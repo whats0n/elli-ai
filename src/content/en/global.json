@@ -1,0 +1,18 @@
+{
+	"nav": [
+		{ "title": "Home", "href": "index.html" },
+		{ "title": "Use Cases", "href": "use-cases.html" },
+		{ "title": "Capabilities", "href": "capabilities.html" },
+		{ "title": "About", "href": "about.html" },
+		{ "title": "Blog", "href": "blog.html" },
+		{ "title": "News", "href": "news.html" },
+		{ "title": "Contact", "href": "contacts.html" }
+	],
+	"version": {
+		"title": "DE",
+		"href": "de",
+		"folder": ""
+	},
+	"copyrights": "Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group",
+	"demo": "Request a Demo"
+}

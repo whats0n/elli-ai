@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Capability</title>
+    <title>Template</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -17,6 +17,7 @@
         <span></span>
       </button>
       <a href="#" class="sm-btn header__btn js-header-btn" data-animation-from="fade-top">Request a Demo</a>
+      <a href="de" class="header__link js-header-btn js-lang" data-animation-from="fade-top">DE</a>
       <div class="container">
         <div class="inner header__inner">
           <a href="home.html" class="logo js-logo" data-animation-from="fade-top">
@@ -24,7 +25,6 @@
               <use xlink:href="img/sprite.svg#icon-logo"></use>
             </svg>
           </a>
-          <a href="#" class="header__link js-header-btn" data-animation-from="fade-top">DE</a>
         </div>
       </div>
     </header>
@@ -39,36 +39,36 @@
         </button>
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="home.html" class="nav__link" data-animation-from="fade-bottom">Home</a>
+            <a href="index.html" class="nav__link js-nav-link" data-href="index.html" data-animation-from="fade-bottom">Home</a>
           </li>
           <li class="nav__item">
-            <a href="use-cases.html" class="nav__link" data-animation-from="fade-bottom">Use Cases</a>
+            <a href="use-cases.html" class="nav__link js-nav-link" data-href="use-cases.html" data-animation-from="fade-bottom">Use Cases</a>
           </li>
           <li class="nav__item">
-            <a href="capabilities.html" class="nav__link" data-animation-from="fade-bottom">Capabilities</a>
+            <a href="capabilities.html" class="nav__link js-nav-link" data-href="capabilities.html" data-animation-from="fade-bottom">Capabilities</a>
           </li>
           <li class="nav__item">
-            <a href="about.html" class="nav__link" data-animation-from="fade-bottom">About</a>
+            <a href="about.html" class="nav__link js-nav-link" data-href="about.html" data-animation-from="fade-bottom">About</a>
           </li>
           <li class="nav__item">
-            <a href="blog.html" class="nav__link" data-animation-from="fade-bottom">Blog</a>
+            <a href="blog.html" class="nav__link js-nav-link" data-href="blog.html" data-animation-from="fade-bottom">Blog</a>
           </li>
           <li class="nav__item">
-            <a href="news.html" class="nav__link" data-animation-from="fade-bottom">News</a>
+            <a href="news.html" class="nav__link js-nav-link" data-href="news.html" data-animation-from="fade-bottom">News</a>
           </li>
           <li class="nav__item">
-            <a href="contacts.html" class="nav__link" data-animation-from="fade-bottom">Contact</a>
+            <a href="contacts.html" class="nav__link js-nav-link" data-href="contacts.html" data-animation-from="fade-bottom">Contact</a>
           </li>
         </ul>
         <div class="nav__lang" data-animation-from="fade-bottom">
-          <a href="#">DE</a>
+          <a href="de" class="js-lang">DE</a>
         </div>
       </div>
     </div>
     <!-- end nav -->
     <!-- BEGIN content -->
     <div id="barba-wrapper">
-      <div class="barba-container">
+      <div class="barba-container js-barba-container" data-lang-title="DE" data-lang-href="de" data-lang-folder="">
         <div class="page js-page" data-animation="news">
           <div class="page__scrollable">
             <div class="page__lines">
@@ -128,6 +128,10 @@
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
+    <script>
+      window.rootPath = '';
+
+    </script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
   </body>
