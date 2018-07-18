@@ -16,14 +16,13 @@
     {% include 'partials/_nav.html' %}
     <!-- BEGIN content -->
     <div id="barba-wrapper">
-        <div class="barba-container js-barba-container" data-lang-title="{{version.title}}" data-lang-href="{{version.href}}" data-lang-folder="{{version.folder}}">
+        <div class="barba-container js-barba-container" data-lang-title="{{version.title}}" data-lang-href="{{version.href}}" data-lang-folder="{{version.folder}}" data-path="{{rootPath}}">
             {% block content %}{% endblock %}
         </div>
     </div>
     <!-- END content -->
 
     <!-- BEGIN scripts -->
-    <script>window.rootPath = '{{rootPath}}';</script>
     <script type="text/javascript" src="{{rootPath}}js/app.js"></script>
     <!-- END scripts -->
 

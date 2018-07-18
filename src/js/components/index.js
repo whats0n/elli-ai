@@ -17,22 +17,13 @@ import { showHeader } from './sections';
 Barba.Pjax.init();
 Barba.Prefetch.init();
 
-FullScreen.init();
-onScroll.init();
-
-showHeader();
-page.show();
-select.init();
-
-testimonials.init();
-
 const updateLinks = container => {
   const lang = {
     href:  container.data('lang-href'),
     title:  container.data('lang-title'),
-    folder: container.data('lang-folder')
+    folder: container.data('lang-folder'),
+    path: container.data('path')
   };
-  console.log(lang.href + location.pathname.substring(location.pathname.lastIndexOf('/') + 1));
 
   $('.js-lang')
     .attr('href', lang.href + location.pathname.substring(location.pathname.lastIndexOf('/') + 1))
@@ -43,9 +34,20 @@ const updateLinks = container => {
     const href = link.data('href');
     link.attr('href', lang.folder + href);
   });
+
+  window.rootPath = lang.path;
 };
 
 updateLinks($('.js-barba-container'));
+
+FullScreen.init();
+onScroll.init();
+
+showHeader();
+page.show();
+select.init();
+
+testimonials.init();
 
 const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
@@ -61,6 +63,7 @@ const FadeTransition = Barba.BaseTransition.extend({
   },
 
   fadeIn: function() {
+    updateLinks($(this.newContainer));
     $(this.oldContainer).hide();
     $(this.newContainer)
       .css({
@@ -74,7 +77,6 @@ const FadeTransition = Barba.BaseTransition.extend({
         page.show();
         select.init();
         WIN.scrollTop(0);
-        updateLinks($(this.newContainer));
       });
   }
 });

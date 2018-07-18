@@ -1,4 +1,5 @@
 {
+	"rootPath": "",
 	"nav": [
 		{ "title": "Home", "href": "index.html" },
 		{ "title": "Use Cases", "href": "use-cases.html" },
