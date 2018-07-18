@@ -32,10 +32,10 @@ const updateLinks = container => {
     title:  container.data('lang-title'),
     folder: container.data('lang-folder')
   };
-  console.log(lang.title);
+  console.log(lang.href + location.pathname.substring(location.pathname.lastIndexOf('/') + 1));
 
   $('.js-lang')
-    .attr('href', lang.href)
+    .attr('href', lang.href + location.pathname.substring(location.pathname.lastIndexOf('/') + 1))
     .html(lang.title);
 
   $('.js-nav-link').each((i, link) => {
