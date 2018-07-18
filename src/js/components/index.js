@@ -10,6 +10,7 @@ import nav from './nav';
 import onScroll from './onscroll';
 import page from './page';
 import select from './select';
+import testimonials from './testimonials';
 
 import { showHeader } from './sections';
 
@@ -22,6 +23,8 @@ onScroll.init();
 showHeader();
 page.show();
 select.init();
+
+testimonials.init();
 
 const FadeTransition = Barba.BaseTransition.extend({
   start: function() {

@@ -16,7 +16,7 @@ title: Use Cases
 				<div class="inner page__inner">
 					<div class="news">
 						<div class="news__items">
-							<div class="news__item">
+							<div class="news__item news__item_main">
 								<div class="news__box news__box_simple">
 									<div class="news__heading">
 										<h2 class="title-xl title-xl_black news__title js-page-title" data-animation-from="fade-top">Use Cases</h2>
@@ -26,21 +26,22 @@ title: Use Cases
 							</div>
 							{% for item in [
 								{ icon: 'business', title: 'Business Areas' },
-								{ icon: 'industries', title: 'Industries' }
+								{ icon: 'industries', title: 'Industries' },
+								{ target: 'use-case-helpdesk.html', icon: 'industries', title: 'Use Case Helpdesk' }
 							] %}
-								<div class="news__item js-news-item">
+								<a href="{{item.target or '#'}}" class="news__item js-news-item">
 									<div class="news__icon js-news-img" data-animation-from="fade">
 										{{mixins.icon(item.icon, 'news__icon-in')}}
 									</div>
 									<div class="news__description js-news-description" data-animation-from="fade-bottom">
 										<p>{{item.title}}</p>
 									</div>
-								</div>
+								</a>
 							{% endfor %}
 						</div>
 					</div>
 				</div>
-				<div class="page__label js-page-label" data-animation-from="fade-bottom">2018 Elle AI Systems all right’s reserved</div>
+				<div class="page__label js-page-label" data-animation-from="fade-bottom">Copyright © 2018, ELLI TECHNOLOGIES and the company of Accesa IT Group</div>
 			</div>
 		</div>
 	</div>

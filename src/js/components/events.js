@@ -2,6 +2,7 @@ import { TimelineMax, TweenMax } from 'gsap';
 
 import { EVENTS, WIN, widthMD, getMediaMaxWidth, ACTIVE } from '../constants';
 import connect from '../connect';
+import testimonials from './testimonials';
 
 import {
   clearAnimation,
@@ -44,6 +45,7 @@ connect.on(EVENTS.FULLSCREEN_AFTER_CHANGE, (props) => {
   disable();
   showSection({
     currentSlide,
+    afterShow: testimonials.init,
     animationComplete: enable
   });
 });

@@ -94,22 +94,22 @@
 		+xs
 			max-width: 325px
 	&__sm-info
-		float: right
+		// float: right
 		padding-left: 45px
-		width: 66%
+		// width: 66%
 		min-height: 180px
 		+md 
 			float: none
 			padding-left: 0
 			width: 100%
-		.sm-info__title
-			margin-right: -50%
-			+md 
-				margin-right: 0
+		// .sm-info__title
+			// margin-right: -50%
+		// 	+md 
+		// 		margin-right: 0
 	&__box
 		float: left
 		padding: 35px 0 35px 45px
-		width: 34%
+		width: 33.33%
 		+md 
 			float: none
 			display: inline-block
@@ -119,10 +119,11 @@
 		+xs 
 			width: 50%
 			text-align: center
-		&:not(:nth-child(2))
-			clear: right
+		// &:not(:nth-child(2))
+			// clear: right
 	&__label
 		position: absolute
+		z-index: 10
 		left: 45px
 		bottom: 45px
 		max-height: 100px
@@ -134,6 +135,8 @@
 		transform: scale(-1)
 		+md 
 			display: none
+		&[data-theme="white"]
+			color: $white
 	&__subtitle
 		margin: 0 0 50px 45px
 		max-width: 460px
@@ -164,9 +167,12 @@
 			display: none
 		p
 			max-width: 600px
-			opacity: 0.43
+			color: rgba(#17191c, 0.43)
 			&:not(:last-child)
 				margin-bottom: 20px
+			em 
+				color: $dark
+				font-style: normal
 		a 
 			color: $blue 
 			+hover
@@ -175,6 +181,20 @@
 		img,
 		video
 			max-width: 66.6%
+			+rh(800)
+				max-height: 250px
+	&__iframe
+		position: relative
+		max-width: 66.6%
+		padding-bottom: 33.33%
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
 	&__lines
 		position: absolute
 		top: 0
