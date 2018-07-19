@@ -68,13 +68,6 @@ class FullScreen {
     this.cache.container.addClass('fullscreen');
     this.cache.slides.addClass('fullscreen__slide');
     this.cache.container.append(`<div class="fullscreen__nav js-fullscreen-nav js-color-block" data-animation-from="fade">
-      <ul class="fullscreen__nav-list js-color-block">${(() => {
-    let items = '';
-    for (let i = 0; i < this.cache.length; i++) {
-      items += '<li><button class="fullscreen__nav-btn js-fullscreen-btn"></button></li>';
-    }
-    return items;
-  })()}</ul>
       <div class="fullscreen__counter">
         <div class="fullscreen__counter-main js-fullscreen-counter">1</div>
         <div class="fullscreen__counter-dots">
@@ -83,11 +76,18 @@ class FullScreen {
           <i></i>
         </div>
         <div class="fullscreen__counter-total">/${this.cache.length}</div>
-        <div class="fullscreen__arrows">
-          <button class="fullscreen__arr fullscreen__next js-fullscreen-next">
-            <svg class="icon icon-down fullscreen__arr-icon"><use xlink:href="${window.rootPath}img/sprite.svg#icon-down"></use></svg>
-          </button>
-        </div>
+      </div>
+      <ul class="fullscreen__nav-list js-color-block">${(() => {
+    let items = '';
+    for (let i = 0; i < this.cache.length; i++) {
+      items += '<li><button class="fullscreen__nav-btn js-fullscreen-btn"></button></li>';
+    }
+    return items;
+  })()}</ul>
+      <div class="fullscreen__arrows">
+        <button class="fullscreen__arr fullscreen__next js-fullscreen-next">
+          <svg class="icon icon-down fullscreen__arr-icon"><use xlink:href="${window.rootPath}img/sprite.svg#icon-down"></use></svg>
+        </button>
       </div>
     </div>`);
     this.cache.btns = this.cache.container.find('.js-fullscreen-btn');

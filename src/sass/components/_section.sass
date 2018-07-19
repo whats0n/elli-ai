@@ -1,6 +1,7 @@
 .section
 	padding-top: 100px
 	+gpu
+	+clr
 	+md 
 		padding-top: 10px
 		padding-bottom: 10px
@@ -133,8 +134,19 @@
 		text-align: left
 		writing-mode: vertical-rl
 		transform: scale(-1)
+		// +md 
+		// 	display: none
 		+md 
-			display: none
+			position: relative
+			left: 0
+			bottom: 0
+			float: right
+			padding: 15px 30px
+			max-width: 240px
+			max-height: none
+			text-align: right
+			writing-mode: inherit
+			transform: scale(1) !important
 		&[data-theme="white"]
 			color: $white
 	&__subtitle
@@ -209,6 +221,7 @@
 		border-left: 1px solid gainsboro
 		border-right: 1px solid gainsboro
 		width: 20%
+		opacity: 0.5
 		transform: scaleY(0)
 		transform-origin: center bottom
 		+sm 

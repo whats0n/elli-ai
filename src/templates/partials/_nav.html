@@ -6,14 +6,14 @@
 			<span></span>
 			<span></span>
 		</button>
+		<div class="nav__lang" data-animation-from="fade-bottom">
+			<a href="{{version.href}}" class="js-lang">{{version.title}}</a>
+		</div>
 		<ul class="nav__list">
 			{% for item in nav %}
 				<li class="nav__item"><a href="{{version.folder}}{{item.href or '#'}}" class="nav__link js-nav-link" data-href="{{item.href or '#'}}" data-animation-from="fade-bottom">{{item.title}}</a></li>
 			{% endfor %}
 		</ul>
-		<div class="nav__lang" data-animation-from="fade-bottom">
-			<a href="{{version.href}}" class="js-lang">{{version.title}}</a>
-		</div>
 	</div>
 </div>
 <!-- end nav -->
