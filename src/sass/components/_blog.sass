@@ -39,7 +39,15 @@
 		width: 67%
 		+md 
 			width: 60%
+		&_full
+			width: 100%
+			+md 
+				width: 100%
 	&__aside
 		width: 33%
 		+md 
 			width: 40%
+	&__description
+		p
+			&:not(:last-child)
+				margin-bottom: 40px

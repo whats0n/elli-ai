@@ -62,9 +62,18 @@
 		+sm 
 			margin: 0 -30px
 		&-in
+			position: relative
 			padding-bottom: 25%
 			+cover
 			background-color: $blue
+			iframe
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
 	&__info
 		padding: 12px 5px
 		color: $black
@@ -74,3 +83,6 @@
 			transition: color 0.3s
 			+hover 
 				color: $blue
+	&__item
+		&:not(:last-child)
+			margin-bottom: 20px

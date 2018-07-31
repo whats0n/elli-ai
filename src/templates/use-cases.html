@@ -27,7 +27,7 @@ title: Use Cases
 							{% for item in [
 								{ icon: 'business', title: 'Business Areas' },
 								{ icon: 'industries', title: 'Industries' },
-								{ target: 'use-case-helpdesk.html', icon: 'industries', title: 'Use Case Helpdesk' }
+								{ target: 'use-case-helpdesk.html', icon: 'all', title: 'All' }
 							] %}
 								<a href="{{item.target or '#'}}" class="news__item js-news-item">
 									<div class="news__icon js-news-img" data-animation-from="fade">
@@ -37,6 +37,14 @@ title: Use Cases
 										<p>{{item.title}}</p>
 									</div>
 								</a>
+							{% endfor %}
+							{% for item in range(0,6) %}
+								<div class="news__item news__item_simple js-news-item">
+									<div class="news__date js-news-date" data-animation-from="fade-bottom">10th of March 2018</div>
+									<div class="news__description js-news-description" data-animation-from="fade-bottom">
+										<p>Helping parents discover the right apps for their kids</p>
+									</div>
+								</div>
 							{% endfor %}
 						</div>
 					</div>

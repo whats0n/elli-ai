@@ -1,3 +1,8 @@
+.icon-all {
+  width: 1em;
+  height: 1em;
+  fill: initial;
+}
 .icon-business {
   width: 1em;
   height: 1em;
@@ -23,8 +28,13 @@
   height: 1em;
   fill: #006DF0;
 }
-.icon-logo {
+.icon-logo-full {
   width: 1.96em;
+  height: 1em;
+  fill: #1cc3f2;
+}
+.icon-logo {
+  width: 0.95em;
   height: 1em;
   fill: #1cc3f2;
 }
