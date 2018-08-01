@@ -11,6 +11,7 @@ import onScroll from './onscroll';
 import page from './page';
 import select from './select';
 import testimonials from './testimonials';
+import filters from './filters';
 
 import { showHeader } from './sections';
 
@@ -48,6 +49,7 @@ page.show();
 select.init();
 
 testimonials.init();
+filters.init();
 
 const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
@@ -76,6 +78,7 @@ const FadeTransition = Barba.BaseTransition.extend({
         onScroll.init();
         page.show();
         select.init();
+        filters.init();
         WIN.scrollTop(0);
       });
   }

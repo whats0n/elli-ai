@@ -15,7 +15,7 @@ title: Use Cases
 			<div class="container page__container">
 				<div class="inner page__inner">
 					<div class="news">
-						<div class="news__items">
+						<div class="news__items js-filters">
 							<div class="news__item news__item_main">
 								<div class="news__box news__box_simple">
 									<div class="news__heading">
@@ -27,9 +27,9 @@ title: Use Cases
 							{% for item in [
 								{ icon: 'business', title: 'Business Areas' },
 								{ icon: 'industries', title: 'Industries' },
-								{ target: 'use-case-helpdesk.html', icon: 'all', title: 'All' }
+								{ icon: 'all', title: 'All' }
 							] %}
-								<a href="{{item.target or '#'}}" class="news__item js-news-item">
+								<a data-filter="{{item.title}}" class="news__control news__item js-news-item js-filters-control">
 									<div class="news__icon js-news-img" data-animation-from="fade">
 										{{mixins.icon(item.icon, 'news__icon-in', rootPath)}}
 									</div>
@@ -39,10 +39,10 @@ title: Use Cases
 								</a>
 							{% endfor %}
 							{% for item in range(0,6) %}
-								<div class="news__item news__item_simple js-news-item">
+								<div class="news__item news__item_simple js-news-item js-filters-item" data-filter="{% if loop.index > 3 %}Business Areas{% else %}Industries{% endif %}">
 									<div class="news__date js-news-date" data-animation-from="fade-bottom">10th of March 2018</div>
 									<div class="news__description js-news-description" data-animation-from="fade-bottom">
-										<p>Helping parents discover the right apps for their kids</p>
+										<p>Helping parents discover the right apps for their kids. {% if loop.index > 3 %}Business Areas{% else %}Industries{% endif %}</p>
 									</div>
 								</div>
 							{% endfor %}
